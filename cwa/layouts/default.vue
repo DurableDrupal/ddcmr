@@ -25,16 +25,18 @@
     </v-navigation-drawer>
 <!-- end left-hand drawer/menu/sidebar -->
 <!-- main top toolbar -->
-    <v-toolbar class="secondary nav-toolbar" dark fixed app>
+    <v-toolbar class="secondary nav-toolbar" height=64 dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title color="white">
-        <v-avatar size=48>
+        <v-avatar size=48 style="margin-top:6px; margin-right: 4em;" tile>
         <nuxt-link to="/" exact>
-            <img style="width: 48px; opacity: 0.75" :src="theAssetHost + '/v.png'" alt="  DurableDrupal Content Migration Rescue" title="DurableDrupal Content Migration Rescue">
+            <img style="width: 100% height: 100%;" src="/logo-square-64.jpg" alt="  DurableDrupal Content Migration Rescue" title="DurableDrupal Content Migration Rescue">
         </nuxt-link>
         </v-avatar>
       </v-toolbar-title>
-      <h2 class="body-2 ml-4 principal-slogan">DurableDrupal Content Migration Rescue</h2>
+      <nuxt-link to="/" exact>
+        <h2 class="pl-1 pr-1 principal-slogan">DurableDrupal Content Migration Rescue</h2>
+      </nuxt-link>
     </v-toolbar>
 <!-- end top toolbar -->
     <v-content>
@@ -42,8 +44,23 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer app>
-      <p class="ml-1">DurableDrupal Content Migration Rescue</p>
+    <v-footer app height="auto" class="primary pl-1">
+      <v-container>
+        <v-layout>
+          <v-flex>
+            <v-btn
+              flat
+              exact
+              v-for="fitem in footerItems"
+              :key="fitem.title"
+              :to="fitem.to"
+              class="grey--text text--lighten-3 pa-3">
+              {{ fitem.title }}
+            </v-btn>
+        <div class="primary grey--text text--lighten-3 mt-2">Texts © 2017-2018 authored by Victor Kane CC-BY-SA (unless otherwise stated) Creative Commons Attribution-ShareAlike 4.0 International License <v-btn fab small color="secondary" dark title="@durable_drupal" href="http://twitter.com/durable_drupal"><v-icon>fa-twitter</v-icon></v-btn><v-btn fab small color="secondary" dark title="@DurableDrupal" href="https://www.facebook.com/DurableDrupal/"><v-icon>fa-facebook</v-icon></v-btn></div>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -53,12 +70,39 @@
     data: () => ({
       drawer: null,
       clipped: true,
-      theAssetHost: process.env.ASSET_HOST,
       items: [
+        { icon: 'fa-home', title: 'Home', to: '/' },
+        { icon: 'fa-pencil', title: 'Inspire', to: '/inspire' }
+      ],
+      footerItems: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-pencil', title: 'Inspire', to: '/inspire' }
       ]
     })
   }
 </script>
+
+<style>
+.application.theme--light .principal-slogan {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 26px;
+  font-weight: 600;
+}
+.application.theme--light .v-toolbar__content a {
+  text-decoration: none;
+  margin-left: 1em;
+  background: url("/img/background.jpg")
+}
+
+.application.theme--light footer {
+  text-align: center;
+}
+
+@media only screen and (max-width : 420px) {
+  .application.theme--light .principal-slogan {
+    font-size: 21px;
+    line-height: 1em;
+  }
+}
+</style>
 

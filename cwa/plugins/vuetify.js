@@ -4,12 +4,14 @@ import colors from 'vuetify/es5/util/colors'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#1976D2',
-    secondary: '#424242',
-    accent: '#82B1FF',
-    error: '#FF5252',
-    info: '#2196F3',
-    success: '#4CAF50',
-    warning: '#FFC107'
+    primary: colors.lightBlue.darken3,
+    accent: colors.lightBlue.accent3,
+    secondary: colors.lightBlue.darken1,
+    error: colors.red.base,
+    info: colors.lightBlue.darken4,
+    success: colors.lightBlue.lighten4,
+    warning: colors.amber.base, 
+    dicons: colors.grey.darken3,
+    licons: colors.grey.lighten4
   }
 })
