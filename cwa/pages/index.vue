@@ -9,10 +9,10 @@
 <!-- start first content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary white--text headline">What is Content Migration Rescue and why do we need it?</v-card-title>
+            <v-card-title class="primary white--text headline">Welcome to the DurableDrupal Content Migration Rescue Community</v-card-title>
             <v-card-text>
               <div>
-                <p>Well...</p>
+              <p class="pa-2">Proin sodales velit risus, quis volutpat augue blandit vitae. Aliquam in eleifend dolor. Nulla sodales metus quis sodales finibus. Sed rhoncus diam sed neque lobortis tristique. Maecenas at lorem sed enim aliquam vestibulum. Pellentesque eget eros vestibulum, sollicitudin lorem id, faucibus nulla. Praesent vestibulum mattis dapibus. Donec in sem varius, auctor enim in, tempor mi. Aliquam semper libero eu libero ultricies placerat.</p>
               </div>
             </v-card-text>
           </v-card>
