@@ -1,0 +1,30 @@
+{
+  "name": "np-lso",
+  "version": "1.0.0",
+  "description": "DurableDrupal Content Migration Rescue Website",
+  "author": "victorkane",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/dotenv": "^1.1.1",
+    "nuxt": "^1.0.0",
+    "vuetify": "^1.0.19"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1"
+  }
+}
