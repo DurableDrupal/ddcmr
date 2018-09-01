@@ -75,14 +75,16 @@
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },
         { icon: 'fa-file-text', title: 'Case Studies', to: '/case-studies' },
         { icon: 'fa-book', title: 'The Book', to: '/book' },
-        { icon: 'fa-pencil', title: 'Blog', to: '/blog' }
+        { icon: 'fa-pencil', title: 'Blog', to: '/blog' },
+        { icon: 'fa-github', title: 'Steps you can take', to: '/steps-you-can-take' }
       ],
       footerItems: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },
         { icon: 'fa-file-text', title: 'Case Studies', to: '/case-studies' },
         { icon: 'fa-book', title: 'The Book', to: '/book' },
-        { icon: 'fa-pencil', title: 'Blog', to: '/blog' }
+        { icon: 'fa-pencil', title: 'Blog', to: '/blog' },
+        { icon: 'fa-github', title: 'Steps you can take', to: '/steps-you-can-take' }
       ]
     })
   }
