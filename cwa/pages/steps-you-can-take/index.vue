@@ -9,7 +9,7 @@
 <!-- start first content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary white--text headline">Steps you can take</v-card-title>
+            <v-card-title class="primary--text headline">Steps you can take</v-card-title>
             <div>
               <p class="pa-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis nunc, elementum nec rhoncus in, dignissim eget ligula. Nam eu pellentesque eros. Nam non justo vel eros dictum aliquam eget nec justo. Pellentesque ut rhoncus est. Aenean nec quam ex. Mauris porta est finibus, finibus est eget, elementum massa. Quisque laoreet massa et neque hendrerit accumsan. Vivamus eget leo elit.</p>
             </div>

@@ -44,7 +44,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer app height="auto" class="primary pl-1">
+    <v-footer height="auto" class="primary pl-1">
       <v-container>
         <v-layout>
           <v-flex>
@@ -73,16 +73,16 @@
       items: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },
-        { icon: 'fa-file-text', title: 'Case Studies', to: '/case-studies' },
-        { icon: 'fa-book', title: 'The Book', to: '/book' },
+        { icon: 'fa-file-text', title: 'The Case Studies', to: '/case-studies' },
+        { icon: 'fa-book', title: 'The Books', to: '/books' },
         { icon: 'fa-pencil', title: 'Blog', to: '/blog' },
         { icon: 'fa-github', title: 'Steps you can take', to: '/steps-you-can-take' }
       ],
       footerItems: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },
-        { icon: 'fa-file-text', title: 'Case Studies', to: '/case-studies' },
-        { icon: 'fa-book', title: 'The Book', to: '/book' },
+        { icon: 'fa-file-text', title: 'The Case Studies', to: '/case-studies' },
+        { icon: 'fa-book', title: 'The Books', to: '/books' },
         { icon: 'fa-pencil', title: 'Blog', to: '/blog' },
         { icon: 'fa-github', title: 'Steps you can take', to: '/steps-you-can-take' }
       ]

@@ -9,9 +9,18 @@
 <!-- start first content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary white--text headline">Case Studies</v-card-title>
+            <v-card-title class="primary--text headline">Case Studies</v-card-title>
             <div>
-              <p class="pa-2">Etiam at elit euismod, euismod velit feugiat, dictum lacus. Donec feugiat orci placerat, lacinia ante nec, lobortis lacus. Donec porta ornare velit, eget finibus purus commodo in. Nullam molestie dolor at tortor vestibulum ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rutrum convallis mauris, in laoreet sapien sollicitudin nec. Vestibulum a ante posuere, pulvinar massa in, dapibus risus. Integer tortor mi, elementum nec mauris at, varius feugiat sem. Phasellus vestibulum, nulla ut elementum sagittis, elit ante eleifend ex, sed mollis enim nisi id dolor. Etiam convallis nibh felis, non pharetra elit convallis quis. Aliquam justo diam, ullamcorper ut est commodo, tincidunt tempor purus. Vivamus tincidunt porta odio, condimentum sollicitudin turpis tempus eu. Mauris eleifend venenatis purus, id auctor mauris gravida in. Donec pharetra dictum scelerisque. Maecenas facilisis placerat elementum. In tristique commodo semper.</p>
+              <p class="pa-2">
+              So aren't you sick and tired of tutorials that show how "awesome" and "easy" full stack javascript is, and how you can whip up an app in 5 minutes? Sometimes that's even true. But the apps used in all the shallow examples 99% of the time have one thing in common: they are completely trivial and never touch the real world on several important points:
+              </p>
+
+              <ul><li>They are rarely re-usable</li>
+                  <li>They almost always include some kind of "free" but actually paid service on the backend</li>
+                 <li>They don't take into account how to do things like update to newer versions of frameworks, or deploy apps</li>
+                 <li>They often do nothing more than repeat what is already in the docs</li></ul>
+
+               <p>Well, we aren't going to show any over-simplified examples here, everything is a full-blown case study that goes through the complete cycle of disciplines your team really needs to master in order to actually launch real world apps.</p>
             </div>
           </v-card>
         </v-flex>
