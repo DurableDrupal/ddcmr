@@ -29,7 +29,7 @@ fs.readFile(file, 'utf8', function (err,content) {
 //   console.log(util.inspect(contentItem, { showHidden: false, depth: null}))
 //   return
   // console.log('theUri', theUri)
-  if (contentType === 'poems') {
+  if (contentType === 'articles') {
     rp({
       method: 'GET',
       uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
@@ -114,3 +114,4 @@ fs.readFile(file, 'utf8', function (err,content) {
     })
   }
 })
+
