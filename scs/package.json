@@ -1,0 +1,28 @@
+{
+  "name": "ddcmr-scs",
+  "version": "1.0.0",
+  "description": "Structured Content Server for DurableDrupal Content Migration Rescue website",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "server-dev": "nodemon --watch server server.js"
+  },
+  "keywords": [],
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^5.2.8",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
