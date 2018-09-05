@@ -1,0 +1,23 @@
+{
+  "name": "ddcmr-cms",
+  "version": "1.0.0",
+  "description": "cms for ddcmr site",
+  "main": "upsert/upsert.js",
+  "scripts": {
+    "upsert": "node upsert/upsert",
+    "view": "node upsert/echo-content"
+  },
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/durabledrupal/ddcmr/issues"
+  },
+  "homepage": "https://github.com/durabledrupal/ddcmr#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "gray-matter": "^4.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "yamljs": "^0.3.0"
+  }
+}
