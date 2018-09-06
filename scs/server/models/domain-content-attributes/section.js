@@ -10,8 +10,8 @@ var sectionSchema = mongoose.Schema({
   sectionTitle: String,
   sectionSubTitle: String,
   author: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Author'} ],
-  // sectionFrontMatter: [ { weight: Number, value: Text.schema } ],
-//   sectionChapters: [ { weight: Number, type: mongoose.Schema.Types.ObjectId, ref: 'Chapter'} ],
+  sectionFrontMatter: [{ weight: Number, value: Text.schema }],
+  sectionChapters: [{ weight: Number, chapter: { type: mongoose.Schema.Types.ObjectId, ref: 'Article'} }],
   tags: [Tag.schema]
 })
  
