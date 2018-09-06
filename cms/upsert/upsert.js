@@ -1,14 +1,16 @@
 // run with npm from project root: 'npm run upsert -- authors nora-alicia-perusin'
 // else 'cd upsert; node upsert authors nora-alicia-perusin'
 
-var fs = require('fs')
-var rp = require('request-promise');
+const fs = require('fs')
+const YAML = require('yamljs');
+const rp = require('request-promise');
 require('dotenv').config()
-// for console log
-var util = require('util')
-var YAML = require('yamljs');
 
-var apiHost  = 'http://' + process.env.API_HOST + ':' + process.env.API_PORT
+// for more complete console log if necessary, such as the following:
+//   console.log(util.inspect(contentItem, { showHidden: false, depth: null}))
+// const util = require('util')
+
+const apiHost  = 'http://' + process.env.API_HOST + ':' + process.env.API_PORT
 
 if (process.argv.length > 3) {
   contentType = process.argv[2]
@@ -19,6 +21,76 @@ if (process.argv.length > 3) {
   process.exit(0)
 }
 
+async function processArticles(contentItem) {
+  const optionsGet = {
+    method: 'GET',
+    uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
+    json: true
+  }
+  const authors = await rp(optionsGet)
+  if (authors.length > 0) {
+    contentItem.author = authors[0]._id
+  } else {
+    console.log("no author specified\n")
+  }
+  const optionsPut = {
+    method: 'PUT',
+    uri: apiHost + '/api/' + contentType,
+    body: contentItem,
+    json: true
+  }
+  const res =  await rp(optionsPut)
+  console.log("res", res.message)
+  return res
+}
+
+async function processBooks(contentItem) {
+  const optionsGetAuthor = {
+    method: 'GET',
+    uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
+    json: true
+  }
+  const authors = await rp(optionsGetAuthor)
+  if (authors.length > 0) {
+    contentItem.author = authors[0]._id
+  } else {
+    console.log("no author specified\n")
+  }
+  const optionsGetPublisher = {
+    method: 'GET',
+    uri: apiHost + '/api/publishers?itemName='  + contentItem.publisher + '&select=_id',
+    json: true
+  }
+  const publishers = await rp(optionsGetPublisher)
+  if (publishers.length > 0) {
+    contentItem.publisher = publishers[0]._id
+  } else {
+    console.log("no publisher specified\n")
+  }
+  const optionsPut = {
+    method: 'PUT',
+    uri: apiHost + '/api/' + contentType,
+    body: contentItem,
+    json: true
+  }
+  const res =  await rp(optionsPut)
+  console.log("res", res.message)
+  return res
+}
+
+// doesn't have (i.e. populate) dependencies to grab first
+async function processGenericContent(contentItem) {
+  const optionsPut = {
+    method: 'PUT',
+    uri: apiHost + '/api/' + contentType,
+    body: contentItem,
+    json: true
+  }
+  const res =  await rp(optionsPut)
+  console.log("res", res.message)
+  return res
+}
+
 const file = './content/' + contentType + '/' + param + '.md'
 
 fs.readFile(file, 'utf8', function (err,content) {
@@ -26,92 +98,19 @@ fs.readFile(file, 'utf8', function (err,content) {
     return console.log(err)
   }
   contentItem = YAML.parse(content);
-//   console.log(util.inspect(contentItem, { showHidden: false, depth: null}))
-//   return
-  // console.log('theUri', theUri)
+  let result = 0
   if (contentType === 'articles') {
-    rp({
-      method: 'GET',
-      uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
-      json: true
-    })
-    .then(function (authorbody) {
-      // console.log('author', authorbody)
-      if (typeof authorbody[0] === "undefined" ) {
-        console.log("Unknown author", contentItem.author + "\n")
-      } else {
-        // console.log('authorId', authorId)
-        contentItem.author = authorbody[0]._id
-        console.log('contentItem', contentItem)
-        rp({
-          method: 'PUT',
-          uri: apiHost + '/api/' + contentType,
-          body: contentItem,
-          json: true
-        })
-        .then(function (body) {
-          // console.log('body ', body)
-        })
-        .catch(function (err) {
-          console.log('error', err)
-        })
-      }
-    })
+    result = processArticles(contentItem)
   } else if (contentType === 'books') {
-    // TODO support editor and/or author, at least one value of either
-    rp({
-      method: 'GET',
-      uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
-      json: true
-    })
-    .then(function (authorbody) {
-      // console.log('author', authorbody)
-      if (typeof authorbody[0] === "undefined" ) {
-        console.log("Unknown author", contentItem.author + "\n")
-      } else {
-        contentItem.author = authorbody[0]._id
-        // get publisher
-        rp({
-          method: 'GET',
-          uri: apiHost + '/api/publishers?itemName='  + contentItem.publisher + '&select=_id',
-          json: true
-        })
-        .then(function (thePublishers) {
-          if (typeof thePublishers[0] === "undefined" ) {
-            console.log("Unknown publisher", contentItem.publisher + "\n")
-          } else {
-            // console.log('authorId', authorId)
-            contentItem.publisher = thePublishers[0]._id
-            // console.log('contentItem', contentItem)
-            rp({
-              method: 'PUT',
-              uri: apiHost + '/api/' + contentType,
-              body: contentItem,
-              json: true
-            })
-            .then(function (body) {
-              console.log('body ', body)
-            })
-            .catch(function (err) {
-              console.log('error', err)
-            })
-          }
-        })
-      }
-    })
+    result =  processBooks(contentItem)
   } else {
-    rp({
-      method: 'PUT',
-      uri: apiHost + '/api/' + contentType,
-      body: contentItem,
-      json: true
-    })
-    .then(function (body) {
-      console.log('body ', body)
-    })
-    .catch(function (err) {
-      console.log('error', err)
-    })
+    result = processGenericContent(contentItem)
+  }
+  try {
+    return Promise.resolve(result)
+  }
+  catch (error) {
+    return Promise.reject(error)
   }
 })
 
