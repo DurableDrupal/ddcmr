@@ -3,10 +3,13 @@ const Video = require('../../models/video').Video;
 
 // API for /api/videos (videos collection requests)
 router.get('/videos', function(req, res) {
-  const querystring = (req.query.idLegacy) ? {idLegacy: req.query.idLegacy} : {}
-  query = Video.find(querystring)
+  query = Video.find()
+  .populate({
+    path: 'author',
+    select: '-authorPersonalInfo'
+  })
   if (req.query.limit) {
-    query.limit(req.query.limit)
+    query.limit(parseInt(req.query.limit))
   }
   if (req.query.sort) {
     query.sort(req.query.sort)
@@ -47,11 +50,8 @@ router.post('/videos', function(req, res) {
 
 // Video upsert on the basis of idLegacy in query
 router.put('/videos', function(req, res) {
-    // TODO support update as well as upsert
-        // update: :_id present, define query and options accordingly
-        // upsert: no :_id present, but :idLegacy present, define query and options accordingly
     var query = {
-        'idLegacy': req.body.idLegacy
+        'metaData.itemSlug': req.body.metaData.itemSlug
     }
     Video.findOneAndUpdate(query, req.body, {upsert: true, new: true},
       function(err, video) {

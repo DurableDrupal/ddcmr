@@ -8,7 +8,7 @@ var videoSchema = mongoose.Schema({
   idLegacy: Number,
   metaData: MetaData.schema,
   author: [{type: mongoose.Schema.Types.ObjectId, ref: 'Author'}],
-  video: Media.schema,
+  videoMedia: Media.schema,
   videoImage: Media.schema,
   videoDescription: Text.schema,
   videoSummary: Text.schema,
