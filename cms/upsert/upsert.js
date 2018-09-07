@@ -11,6 +11,7 @@ require('dotenv').config()
 // const util = require('util')
 
 const apiHost  = 'http://' + process.env.API_HOST + ':' + process.env.API_PORT
+let contentType = null;
 
 if (process.argv.length > 3) {
   contentType = process.argv[2]
@@ -35,6 +36,31 @@ async function processArticles(contentItem) {
     return console.log("no author specified\n")
   }
   // upsert article
+  const optionsPut = {
+    method: 'PUT',
+    uri: apiHost + '/api/' + contentType,
+    body: contentItem,
+    json: true
+  }
+  const res =  await rp(optionsPut)
+  console.log("res", res.message)
+  return res
+}
+
+async function processVideos(contentItem) {
+  // get author _id for query population  TODO authors, make sure we have one at least
+  const optionsGet = {
+    method: 'GET',
+    uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
+    json: true
+  }
+  const authors = await rp(optionsGet)
+  if (authors.length > 0) {
+    contentItem.author = authors[0]._id
+  } else {
+    return console.log("no author specified\n")
+  }
+  // upsert video
   const optionsPut = {
     method: 'PUT',
     uri: apiHost + '/api/' + contentType,
@@ -134,6 +160,8 @@ fs.readFile(file, 'utf8', function (err,content) {
   let result = 0
   if (contentType === 'articles') {
     result = processArticles(contentItem)
+  } else if (contentType === 'videos') {
+    result =  processVideos(contentItem)
   } else if (contentType === 'books') {
     result =  processBooks(contentItem)
   } else if (contentType === 'case-studies') {
