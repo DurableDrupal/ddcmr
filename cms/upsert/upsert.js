@@ -22,6 +22,7 @@ if (process.argv.length > 3) {
 }
 
 async function processArticles(contentItem) {
+  // get author _id for query population  TODO authors, make sure we have one at least
   const optionsGet = {
     method: 'GET',
     uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
@@ -31,8 +32,9 @@ async function processArticles(contentItem) {
   if (authors.length > 0) {
     contentItem.author = authors[0]._id
   } else {
-    console.log("no author specified\n")
+    return console.log("no author specified\n")
   }
+  // upsert article
   const optionsPut = {
     method: 'PUT',
     uri: apiHost + '/api/' + contentType,
@@ -45,6 +47,7 @@ async function processArticles(contentItem) {
 }
 
 async function processBooks(contentItem) {
+  // get author _id for query population TODO authors and/or editors, make sure we have one at least one of either
   const optionsGetAuthor = {
     method: 'GET',
     uri: apiHost + '/api/authors?itemName='  + contentItem.author + '&select=_id',
@@ -56,6 +59,7 @@ async function processBooks(contentItem) {
   } else {
     console.log("no author specified\n")
   }
+  // get publisher for query population
   const optionsGetPublisher = {
     method: 'GET',
     uri: apiHost + '/api/publishers?itemName='  + contentItem.publisher + '&select=_id',
@@ -67,6 +71,35 @@ async function processBooks(contentItem) {
   } else {
     console.log("no publisher specified\n")
   }
+  // upsert book
+  const optionsPut = {
+    method: 'PUT',
+    uri: apiHost + '/api/' + contentType,
+    body: contentItem,
+    json: true
+  }
+  const res =  await rp(optionsPut)
+  console.log("res", res.message)
+  return res
+}
+
+async function processCaseStudies(contentItem) {
+  // get articles _id from provided slug for query population
+  let theArticles = []
+  for (const article of contentItem.articles) {
+    const optionsGetPublisher = {
+      method: 'GET',
+      uri: apiHost + '/api/articles/slug/'  + article.article + '?select=_id',
+      json: true
+    }
+    const articleId = await rp(optionsGetPublisher)
+    theArticles.push({
+      weight: article.weight,
+      article: articleId._id
+    })
+  } 
+  contentItem["articles"] = theArticles
+  // upsert case study
   const optionsPut = {
     method: 'PUT',
     uri: apiHost + '/api/' + contentType,
@@ -103,6 +136,8 @@ fs.readFile(file, 'utf8', function (err,content) {
     result = processArticles(contentItem)
   } else if (contentType === 'books') {
     result =  processBooks(contentItem)
+  } else if (contentType === 'case-studies') {
+    result =  processCaseStudies(contentItem)
   } else {
     result = processGenericContent(contentItem)
   }

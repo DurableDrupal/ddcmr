@@ -1,6 +1,6 @@
 metaData:
-    itemSlug: case-study-one
-    itemName: Case Study One
+    itemSlug: what-why
+    itemName: What? Why?
     itemType: caseStudy
     language: en-US
     published: true
