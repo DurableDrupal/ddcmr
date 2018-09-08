@@ -12,6 +12,7 @@ var articleSchema = mongoose.Schema({
   articleTitle: String,
   articleSubTitle: String,
   articleSummary: Text.schema,
+  articleDescription: Text.schema,
   articleBody: Text.schema,
   articleImages: [Media.schema],
   articleVideos: [Media.schema],
