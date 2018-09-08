@@ -4,9 +4,7 @@ var textSchema = mongoose.Schema({
   label: String,
   value: String,
   help: String,
-  maxLines: Number,
-  maxLength: Number,
-  editor: String
+  type: String
 })
 
 exports.Text = mongoose.model('Text', textSchema)
