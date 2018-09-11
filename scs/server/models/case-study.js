@@ -6,6 +6,8 @@ var caseStudySchema = mongoose.Schema({
   idLegacy: Number,
   metaData: MetaData.schema,
   articles: [{ weight: Number, article: { type: mongoose.Schema.Types.ObjectId, ref: 'Article'} }],
+  caseStudySummary: String,
+  caseStudyDescription: String,
   tags: [Tag.schema]
 })
 
