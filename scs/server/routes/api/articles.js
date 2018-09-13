@@ -144,6 +144,13 @@ router.get('/articles/slug/:slug', function(req, res) {
 // API for /api/article/tag/:tag - specific article with param tag slug - TODO add optional query filter if tags are non-unique 
 router.get('/articles/tag/:tag', function(req, res) {
   query = Article.find({"tags.tagSlug": req.params.tag})
+  //.populate('author', 'metaData')
+  .populate({
+    path: 'author',
+//    select: 'metaData _id authorBio'
+//  do not include sensitive personal info; if necessary modularize the select string ?authorselect
+    select: '-authorPersonalInfo'
+  })
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)
