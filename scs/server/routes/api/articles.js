@@ -141,6 +141,28 @@ router.get('/articles/slug/:slug', function(req, res) {
     })
 })
 
+// API for /api/article/tag/:tag - specific article with param tag slug - TODO add optional query filter if tags are non-unique 
+router.get('/articles/tag/:tag', function(req, res) {
+  query = Article.find({"tags.tagSlug": req.params.tag})
+  // optionally support field specifications in query strings
+  if (req.query.select) {
+    query.select(req.query.select)
+  }
+  query.exec(function(err, article) {
+        if (err)
+            return res.json({
+                error: "Error fetching articles",
+                error: err
+            });
+        else if (!article)
+            return res.json({
+                error: "Error finding articles",
+                error: err
+            });
+        res.send(article);
+    })
+})
+
 // API for /api/article/:_id - specific article with param _id
 router.get('/articles/:_id', function(req, res) {
   query = Article.findOne({_id: req.params._id})
