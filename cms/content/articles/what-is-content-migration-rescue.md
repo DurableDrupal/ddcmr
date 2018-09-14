@@ -10,8 +10,6 @@ metaData:
 articleTitle: What is Content Migration Rescue and why do we need it?
 articleSubTitle: null
 author: 'Victor Kane'
-articleSummary:
-    value: null
 articleBody:
     value: |
         ### What is it?
@@ -37,9 +35,20 @@ articleBody:
         At the hour of wanting to spin up client web applications, once again we are chronically placed at the mercy of open source projects made hopelessly chatoic to use due to a mind boggling rate of change as a result, once again, of having individual and community needs chained to the needs of large corporations and their compulsive and often irrational zigzags as they follow, cross-eyed, their own rapidly evolving crises and "opportunities".
 
         Perhaps by sharing our results in the community, we can turn a bewildering, demoralizing journey into a pleasing, exciting and above all, empowering experience.
+articleSummary:
+    value: |
+        ### What is it?
+
+        A step-by-step approach offering freely shared resources needed for migrating your content from an obsolete, monolithic architecture, to a modern and truly scalable fullstack JavaScript set of decoupled applications and services.
+
+        Included here in this DurableDrupal Content Migration Rescue Website repo...
 tags:
     - tagSlug: content-migration-rescue
       tagName: Content Migration Rescue
     - tagSlug: faq
       tagName: FAQ
+    - tagSlug: what-why
+      tagName: What? Why?
+      vocabSlug: top-level-content
+      vocabName: Top Level Content
 

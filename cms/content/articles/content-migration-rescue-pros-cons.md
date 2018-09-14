@@ -60,8 +60,20 @@ articleBody:
         It is not true, however, that unless you are building a huge set of enterprise web applications, the decoupled approach is overkill. The monolith (whether it's Joomla, Wordpress or Drupal 8) is the overkill. The decoupled approach works very well for small and medium sized projects with small and medium sized traffic perspectives. Plus, the advantage of Static Site Generation (using Nuxt.js as we do makes that option built right in), deserves this special mention, since it is a wonderful alternative for marketing campaigns and for such things as portfolio sites, or even newspapers. Because thanks to built in Javascript (via Nuxt.js as we are doing, or via React as in Gatsby), your "static" web app is completely serverless, and can be deployed anywhere HTML can go; and yet by include a certain amount of browser based dynamic behavior. More on that in case studies!
 
 articleSummary:
-    value: null
+    value: |
+        The DurableDrupal Content Migration Rescue process puts forward the need:
+
+        * To move on with your content
+        * To migrate from the Drupal Content Monolith to a Structured Content Model
+        * To move to an open and truly modern API-First Architecture
+
+        So what exactly are the pros and cons?
+
 tags:
     - tagSlug: content-migration-rescue
-    - tagName: Content Migration Rescue
+      tagName: Content Migration Rescue
+    - tagSlug: what-why
+      tagName: What? Why?
+      vocabSlug: top-level-content
+      vocabName: Top Level Content
 

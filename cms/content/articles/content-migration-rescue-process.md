@@ -31,10 +31,19 @@ articleBody:
         
         Many of our case studies will exemplify the Durable Drupal Lean Process Factory, whether in out and out migration rescue of content from the monoliths, or in fresh projects involving modern, open decoupled architecture right from the beginning. 
 articleSummary:
-    value: null
+    value: |
+        You can, and perhaps should, bring your own process. But we do offer a process template based on our own study and experience. It is based on Lean/UX, and should be tailored to the needs of each organization, as explained in my 2015 presentation [DrupalCon Latin America 2015: Setting up a Reusable and Durable Drupal Lean Process Factory](https://www.youtube.com/watch?v=bNbkBvtQ8Z0). Let's breiefly summarize here process highlights and take-aways.
+
+        * Waterfall spells disaster for web application software projects
+        * Agile replaced waterfall
+        * Agile wrongly applied to web application projects is the new waterfall
 tags:
     - tagSlug: content-migration-rescue
       tagName: Content Migration Rescue
     - tagSlug: process
       tagName: Process
+    - tagSlug: what-why
+      tagName: What? Why?
+      vocabSlug: top-level-content
+      vocabName: Top Level Content
 
