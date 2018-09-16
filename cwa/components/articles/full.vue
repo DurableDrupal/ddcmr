@@ -5,17 +5,12 @@
         <v-card-title class="primary--text title">{{ article.articleTitle }}</v-card-title>
         <v-card-title v-if="article.articleSubtitle" class="primary--text subheading">{{ article.articleSubTitle }}</v-card-title>
         <v-card-text
-          v-html="$md.render(article.articleSummary.value)"
+          v-html="$md.render(article.articleBody.value)"
         >
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            :to="$route.path + '/' + article.metaData.itemSlug"
-            class="primary white--text"
-          >
-          See More
-          </v-btn>
+          <v-btn flat color="primary" v-on:click="backbutton">Back</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -28,6 +23,11 @@ export default {
     article: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    backbutton: function() {
+      this.$router.go(-1)
     }
   }
 }

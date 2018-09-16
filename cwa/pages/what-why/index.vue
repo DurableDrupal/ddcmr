@@ -49,9 +49,6 @@ export default {
   },
   methods: {
     selectLoadedArticle(slug) {
-      console.log('slug', slug)
-      // console.log('articles', this.loadedArticles.articles)
-      // return slug
       return this.loadedArticles.articles.find(a => a.metaData.itemSlug === slug )
     }
   }
