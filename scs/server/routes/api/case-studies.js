@@ -84,6 +84,7 @@ router.delete('/case-studies', function(req, res) {
 // API for /api/caseStudy/:_id - specific caseStudy with param _id
 router.get('/case-studies/:_id', function(req, res) {
   query = CaseStudy.findOne({_id: req.params._id})
+  .populate('articles.article')
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)
@@ -103,9 +104,11 @@ router.get('/case-studies/:_id', function(req, res) {
     })
 })
 
-// API for /api/caseStudy/:_id - specific caseStudy with param _id
-router.get('/case-studiesbyslug/:slug', function(req, res) {
+// API for /api/caseStudy/:slug - specific caseStudy with param slug
+router.get('/case-studies/slug/:slug', function(req, res) {
   query = CaseStudy.findOne({"metaData.itemSlug": req.params.slug})
+  // grab articles related to case study ordered by weight
+  .populate('articles.article')
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)
