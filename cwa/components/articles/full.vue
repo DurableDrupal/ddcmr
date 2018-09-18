@@ -8,7 +8,7 @@
           v-html="$md.render(article.articleBody.value)"
         >
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions v-if="back==true">
           <v-spacer></v-spacer>
           <v-btn flat color="primary" v-on:click="backbutton">Back</v-btn>
         </v-card-actions>
@@ -23,6 +23,11 @@ export default {
     article: {
       type: Object,
       required: true
+    },
+    back: {
+      type: Boolean,
+      default: true,
+      required: false
     }
   },
   methods: {
