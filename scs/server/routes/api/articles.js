@@ -122,6 +122,10 @@ router.get('/articles/regex/:regex', function (req, res) {
 // API for /api/article/slug/:slug - specific article with param _id
 router.get('/articles/slug/:slug', function(req, res) {
   query = Article.findOne({"metaData.itemSlug": req.params.slug})
+  .populate({
+    path: 'author',
+    select: '-authorPersonalInfo'
+  })
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)
