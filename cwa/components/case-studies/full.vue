@@ -7,6 +7,13 @@
           v-html="$md.render(caseStudy.caseStudySummary.value)"
         >
         </v-card-text>
+        <v-list class="mt-1">
+          <v-list-tile class="mb-1" v-for="(article, index) in caseStudy.articles" :key=index>
+            <nuxt-link :to="/case-studies/ + caseStudy.metaData.itemSlug + '/' + article.article.metaData.itemSlug">
+              <p>{{ article.article.metaData.itemName }}</p>
+            </nuxt-link>
+          </v-list-tile>
+        </v-list>
         <v-card-actions v-if="back==true">
           <v-spacer></v-spacer>
           <v-btn flat color="primary" v-on:click="backbutton">Back</v-btn>

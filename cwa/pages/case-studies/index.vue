@@ -10,7 +10,7 @@
         <v-flex xs12 sm6>
           <ArticleFull
             :article="selectLoadedArticle('case-studies-intro')"
-            back=false
+            :back=false
           ></ArticleFull>
         </v-flex>
         <v-flex xs12 sm6>
