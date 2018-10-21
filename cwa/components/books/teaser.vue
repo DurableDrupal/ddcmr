@@ -1,9 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12>
-      <v-card flat>
-        <v-card-title class="primary--text title">{{ book.bookTitle + '(' + book.bookCopyright + ')' }}</v-card-title>
-      </v-card>
+        <v-btn color="primary" flat :to="/books/ + book.metaData.itemSlug">{{ book.bookTitle }}</v-btn>
     </v-flex>
   </v-layout>
 </template>

@@ -15,11 +15,9 @@
         </v-flex>
         <v-flex xs12 sm6>
           <v-card v-if="books.length > 0"  v-for="(item, index) in books" :key=index>
-                <nuxt-link :to="/books/ + item.metaData.itemSlug">
                   <BookTeaser
                       :book="item"
                   ></BookTeaser>
-                </nuxt-link>
           </v-card>
         </v-flex>
 <!-- end first content row -->
