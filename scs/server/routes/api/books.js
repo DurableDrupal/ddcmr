@@ -109,8 +109,8 @@ router.get('/books/:_id', function(req, res) {
     })
 })
 
-// API for /api/book/:_id - specific book with param _id
-router.get('/booksbyslug/:slug', function(req, res) {
+// API for /api/book/:_slug - specific book with param slug
+router.get('/books/slug/:slug', function(req, res) {
   query = Book.findOne({"metaData.itemSlug": req.params.slug})
   // optionally support field specifications in query strings
   if (req.query.select) {
