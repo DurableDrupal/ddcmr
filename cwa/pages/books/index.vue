@@ -14,15 +14,12 @@
           ></ArticleFull>
         </v-flex>
         <v-flex xs12 sm6>
-          <v-card v-if="books.length > 0">
-            <v-card-title class="primary--text headline">Books</v-card-title>
-            <v-list class="mt-1">
-              <v-list-tile class="mb-1" v-for="(item, index) in books" :key=index>
+          <v-card v-if="books.length > 0"  v-for="(item, index) in books" :key=index>
                 <nuxt-link :to="/books/ + item.metaData.itemSlug">
-                  <p>{{ item.metaData.itemName }}</p>
+                  <BookTeaser
+                      :book="item"
+                  ></BookTeaser>
                 </nuxt-link>
-              </v-list-tile>
-            </v-list>
           </v-card>
         </v-flex>
 <!-- end first content row -->
@@ -37,10 +34,12 @@
 
 <script>
 import ArticleFull from '@/components/articles/full'
+import BookTeaser from '@/components/books/teaser'
 
 export default {
   components: {
-    ArticleFull
+    ArticleFull,
+    BookTeaser
   },
   computed: {
     loadedArticles() {
