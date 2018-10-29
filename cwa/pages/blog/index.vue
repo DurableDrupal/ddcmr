@@ -25,3 +25,9 @@
 <!-- end page layout -->
 </template>
 
+<script>
+  export default {
+    layout: 'blog'
+  }
+</script>
+
