@@ -1,7 +1,10 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12>
-        <v-btn color="primary" flat :to="/books/ + book.metaData.itemSlug">{{ book.bookTitle }}</v-btn>
+      <div style="text-align: center;">
+        <v-btn color="primary" class="mb-0" flat :to="/books/ + book.metaData.itemSlug">{{ book.bookTitle }}</v-btn>
+        <p class="mt-0">{{ book.bookCopyright }}</p>
+      </div>
     </v-flex>
   </v-layout>
 </template>
