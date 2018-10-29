@@ -30,12 +30,12 @@
       <v-toolbar-title color="white">
         <v-avatar size=48 style="margin-top:6px; margin-right: 4em;" tile>
         <nuxt-link to="/" exact>
-            <img style="width: 100% height: 100%;" src="/logo-square-64.jpg" alt="  DurableDrupal Content Migration Rescue Blog" title="DurableDrupal Content Migration Rescue Blog">
+            <img style="width: 100% height: 100%;" src="/logo-square-64.jpg" alt="  DurableDrupal Blog for Content Migration Rescue" title="DurableDrupal BLOG for Content Migration Rescue">
         </nuxt-link>
         </v-avatar>
       </v-toolbar-title>
       <nuxt-link to="/" exact>
-        <h2 class="pl-1 pr-1 principal-slogan">DurableDrupal Content Migration Rescue BLOG</h2>
+        <h2 class="pl-1 pr-1 principal-slogan">DurableDrupal BLOG for Content Migration Rescue</h2>
       </nuxt-link>
       <v-spacer></v-spacer>
       <a href="https://github.com/DurableDrupal/ddcmr"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
