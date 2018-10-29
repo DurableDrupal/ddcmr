@@ -1,5 +1,5 @@
 <template>
-  <v-app light id="ddcmr-blog-cwa">
+  <v-app light id="ddcmr-default-cwa">
 <!-- start left-hand drawer/menu/sidebar -->
     <v-navigation-drawer
       :clipped="clipped"
