@@ -34,7 +34,7 @@
         </nuxt-link>
         </v-avatar>
       </v-toolbar-title>
-      <nuxt-link to="/" exact>
+      <nuxt-link to="/blog" exact>
         <h2 class="pl-1 pr-1 principal-slogan">DurableDrupal BLOG for Content Migration Rescue</h2>
       </nuxt-link>
       <v-spacer></v-spacer>
