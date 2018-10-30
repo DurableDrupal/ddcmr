@@ -41,6 +41,10 @@ authorPersonalInfo:
           tagName: Lean/UX
         - tagSlug: web-app-engineering
           tagName: web App Engineering
+authorAbout:
+  label: About
+  value: |
+    work as praxis in word + code + social language acquisition architect for real needs +  mentor + poet
 authorBio:
   label: Bio
   value: |

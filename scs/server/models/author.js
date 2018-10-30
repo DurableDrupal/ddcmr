@@ -10,6 +10,7 @@ var authorSchema = mongoose.Schema({
   idLegacy: Number,
   metaData: MetaData.schema,
   authorPersonalInfo: Person.schema,
+  authorAbout: Text.schema, 
   authorBio: Text.schema, 
   authorBanner: Media.schema,
   authorLogo: Media.schema,
