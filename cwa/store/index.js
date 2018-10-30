@@ -7,7 +7,8 @@ const createStore = () => {
       loadedPageArticlesCaseStudies: [],
       loadedCaseStudies: [],
       loadedPageArticlesBooks: [],
-      loadedBooks: []
+      loadedBooks: [],
+      loadedPageArticlesBlog: []
     },
     mutations: {
       setPageArticlesWhatWhy(state, articles) {
@@ -25,6 +26,9 @@ const createStore = () => {
       setBooks(state, books) {
         state.loadedBooks = books
       },
+      setPageArticlesBlog(state, articles) {
+        state.loadedPageArticlesBlog = articles
+      },
     },
     actions: {
       async nuxtServerInit(vuexContext, context) {
@@ -38,6 +42,8 @@ const createStore = () => {
         vuexContext.commit("setPageArticlesBooks", theLoadedPageArticlesBooks)
         const theLoadedBooks = await context.app.$axios.$get (context.env.API_HOST + "/api/books?select=-articles")
         vuexContext.commit("setBooks", theLoadedBooks)
+        const theLoadedPageArticlesBlog = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/blog")
+        vuexContext.commit("setPageArticlesBlog", theLoadedPageArticlesBlog)
       },
     }
   })
