@@ -7,12 +7,15 @@
       <v-layout row wrap>
 
 <!-- start first content item with heading -->
-        <v-flex xs12>
-          <v-card>
-            <v-card-title class="primary--text headline">Blog</v-card-title>
-            <div>
-              <p class="pa-2">Mauris eget tempus nisl. Donec nec purus viverra, vestibulum arcu vel, ornare ipsum. Mauris volutpat blandit pharetra. Ut sodales non nulla in semper. Morbi varius ac urna non porta. Aliquam lobortis erat lectus, sit amet accumsan sem pharetra quis. Curabitur lacinia semper sapien. Praesent id elementum nibh. Aenean vulputate, ipsum ac interdum hendrerit, purus ante consequat nisl, quis rutrum elit sapien eget lorem. Aliquam dignissim velit id leo molestie, et placerat ex ullamcorper.</p>
-            </div>
+        <v-flex xs12 sm6>
+          <v-card v-if="loadedArticles.articles.length > 0">
+            <v-list class="mt-1">
+              <v-list-tile class="mb-1" v-for="(article, index) in loadedArticles.articles" :key=index>
+                <nuxt-link :to="/blog/ + article.metaData.itemSlug">
+                  <p>{{ article.metaData.itemName }}</p>
+                </nuxt-link>
+              </v-list-tile>
+            </v-list>
           </v-card>
         </v-flex>
 <!-- end first content item with heading -->
@@ -27,7 +30,15 @@
 
 <script>
   export default {
-    layout: 'blog'
+    layout: 'blog',
+    computed: {
+      loadedArticles() {
+        const articles = this.$store.state.loadedPageArticlesBlog
+        return {
+          articles
+        }
+      }
+    },    
   }
 </script>
 
