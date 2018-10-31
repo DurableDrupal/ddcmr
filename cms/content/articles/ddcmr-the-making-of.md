@@ -4,9 +4,9 @@ metaData:
     itemType: article
     language: en-US
     published: true
-    publishedDate: '2018-10-30'
-    createdDate: '2018-10-30'
-    modifiedDate: '2018-10-30'
+    publishedDate: '2018-11-30'
+    createdDate: '2018-11-30'
+    modifiedDate: '2018-11-30'
 articleTitle: DurableDrupal Content Migration Rescue website: the making of
 articleSubTitle: Step by step case study
 author: 'Victor Kane'

@@ -155,6 +155,9 @@ router.get('/articles/tag/:tag', function(req, res) {
 //  do not include sensitive personal info; if necessary modularize the select string ?authorselect
     select: '-authorPersonalInfo'
   })
+  if (req.query.sort) {
+    query.sort(req.query.sort)
+  }
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)

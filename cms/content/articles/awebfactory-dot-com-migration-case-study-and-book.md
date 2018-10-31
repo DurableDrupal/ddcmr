@@ -4,9 +4,9 @@ metaData:
     itemType: article
     language: en-US
     published: true
-    publishedDate: '2018-10-30'
-    createdDate: '2018-10-30'
-    modifiedDate: '2018-10-30'
+    publishedDate: '2018-12-01'
+    createdDate: '2018-12-01'
+    modifiedDate: '2018-12-01'
 articleTitle: Awebfactory.com Migration case-study and Book
 articleSubTitle: First step by step case study of a DurableDrupal Content Migration Rescue, from a Drupal 6 site to decoupled and scalable full-stack JavaScript
 author: 'Victor Kane'

@@ -4,9 +4,9 @@ metaData:
     itemType: article
     language: en-US
     published: true
-    publishedDate: '2018-10-30'
-    createdDate: '2018-10-30'
-    modifiedDate: '2018-10-30'
+    publishedDate: '2018-11-01'
+    createdDate: '2018-11-01'
+    modifiedDate: '2018-11-01'
 articleTitle: DurableDrupal Content Migration Rescue website launched
 articleSubTitle: Access freely shared resources to get back your content and structure up, to migrate from an obsolete, monolithic architecture to a free and truly scalable fullstack JavaScript set of decoupled applications and services
 author: 'Victor Kane'

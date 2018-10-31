@@ -42,7 +42,8 @@ const createStore = () => {
         vuexContext.commit("setPageArticlesBooks", theLoadedPageArticlesBooks)
         const theLoadedBooks = await context.app.$axios.$get (context.env.API_HOST + "/api/books?select=-articles")
         vuexContext.commit("setBooks", theLoadedBooks)
-        const theLoadedPageArticlesBlog = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/blog")
+        // sort by published date desc
+        const theLoadedPageArticlesBlog = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/blog?sort=-metaData.publishedDate")
         vuexContext.commit("setPageArticlesBlog", theLoadedPageArticlesBlog)
       },
     }
