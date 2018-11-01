@@ -105,8 +105,8 @@ router.get('/authors/:_id', function(req, res) {
     })
 })
 
-// API for /api/author/:_id - specific author with param _id
-router.get('/authorsbyslug/:slug', function(req, res) {
+// API for /api/author/:slug - specific author with param slug
+router.get('/authors/slug/:slug', function(req, res) {
   query = Author.findOne({"metaData.itemSlug": req.params.slug})
   // optionally support field specifications in query strings
   if (req.query.select) {
