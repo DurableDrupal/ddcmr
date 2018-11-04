@@ -3,10 +3,10 @@
   <v-layout column>
 
 <!-- start content items -->
-    <v-container fluid grid-list-md fill-height v-if="loadedArticles.articles.length > 0" v-for="(article, index) in loadedArticles.articles" :key=index>
+    <v-container fluid grid-list-md fill-height v-if="loadedArticles.articles.length > 0">
       <v-layout row wrap>
           <v-flex xs12 offset-md2 md5 sm7>
-            <v-card class="pa-2" flat>
+            <v-card class="pa-2" flat  v-for="(article, index) in loadedArticles.articles" :key=index>
               <v-card-title color="primary">
                 <v-btn block flat color="secondary" :to="/blog/ + article.metaData.itemSlug">
                   <span style="white-space: normal; text-transform: none;" class="headline text-sm-center">{{ article.metaData.itemName }}</span>
@@ -24,7 +24,7 @@
           <v-flex xs12 sm4 offset-sm1>
             <v-card class="pa-2" flat>
           <AuthorTeaser
-            :author="article.author[0]"
+            :author="loadedArticles.articles[0].author[0]"
           ></AuthorTeaser>
             </v-card>
           </v-flex>
