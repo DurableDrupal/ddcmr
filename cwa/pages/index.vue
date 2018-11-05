@@ -22,13 +22,22 @@
 
         <v-flex xs12>
           <v-card>
-            <v-card-text>
+            <v-card-text class="pb-0">
               <div>
-              <p class="pa-2">
-              A step-by-step approach offering the freely shared resources you need to retrieve your content and structure up, migrating from an obsolete, monolithic architecture to a free and modern truly scalable fullstack JavaScript set of decoupled applications and services. <nuxt-link to="/what-why">Learn more</nuxt-link>
+              <p class="subheading">
+              A step-by-step approach offering the freely shared resources you need to retrieve your content and structure up, migrating from an obsolete, monolithic architecture to a free and modern truly scalable fullstack JavaScript set of decoupled applications and services.
               </p>
               </div>
             </v-card-text>
+            <v-card-actions class="pt-0">
+              <v-spacer></v-spacer>
+              <v-btn
+                to="/what-why"
+                class="primary white--text"
+              >
+                Learn More
+              </v-btn>
+            </v-card-actions>
           </v-card>
         </v-flex>
       </v-layout>
@@ -41,17 +50,27 @@
         <v-flex xs12 sm4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-life-buoy</v-icon> Migration Rescue</v-title>
-          <v-list two-line>
-            <v-list-tile avatar>
+          <v-list three-line>
+            <v-list-tile to="/what-why">
+              <v-list-tile-action>
+                <v-icon>fa-map</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-map</v-icon> What is it?</v-list-tile-title>
-                <v-list-tile-sub-title>Why do you need it?</v-list-tile-sub-title>
+                <v-list-tile-title>What is it?</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Why do you need it?
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile avatar>
+            <v-list-tile to="/what-why">
+              <v-list-tile-action>
+                <v-icon>fa-balance-scale</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-balance-scale</v-icon> Pros and cons?</v-list-tile-title>
-                <v-list-tile-sub-title>What are the hard parts?</v-list-tile-sub-title>
+                <v-list-tile-title>Pros and cons?</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  What about migration process?
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -60,17 +79,27 @@
         <v-flex xs12 sm4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-tasks</v-icon> Steps We're Taking</v-title>
-          <v-list two-line>
-            <v-list-tile avatar>
+          <v-list three-line>
+            <v-list-tile to="/case-studies/durable-drupal-website-making-of">
+              <v-list-tile-action>
+                <v-icon>fa-file-text</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-file-text</v-icon> Case study</v-list-tile-title>
-                <v-list-tile-sub-title>This website: the making of</v-list-tile-sub-title>
+                <v-list-tile-title>Full-stack Case Study</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  This website: the making of
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile avatar>
+            <v-list-tile to="/case-studies/awebfactory-dot-com">
+              <v-list-tile-action>
+                <v-icon>fa-file-text</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-file-text</v-icon> Case study</v-list-tile-title>
-                <v-list-tile-sub-title>AWebFactory.com Step-by-step</v-list-tile-sub-title>
+                <v-list-tile-title>Migration Case Study</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  The AWebFactory.com migration step-by-step
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -79,17 +108,27 @@
         <v-flex xs12 sm4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-road</v-icon> Steps You Can Take</v-title>
-          <v-list two-line>
-            <v-list-tile avatar>
+          <v-list three-line>
+            <v-list-tile href="https://github.com/DurableDrupal/ddcmr">
+              <v-list-tile-action>
+                <v-icon>fa-github</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-exchange</v-icon> Migrate your content!</v-list-tile-title>
-                <v-list-tile-sub-title>Use our code, guides, mentoring</v-list-tile-sub-title>
+                <v-list-tile-title>Star us on Github</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  So everyone who needs this can find us!
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile avatar>
+            <v-list-tile to="/steps-you-can-take">
+              <v-list-tile-action>
+                <v-icon>fa-exchange</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title><v-icon>fa-github</v-icon> Support us!</v-list-tile-title>
-                <v-list-tile-sub-title>Star us on GitHub</v-list-tile-sub-title>
+                <v-list-tile-title>Migrate your content!</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Use our code and guides. Use our mentoring.
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
