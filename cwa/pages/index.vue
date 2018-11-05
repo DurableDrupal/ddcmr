@@ -47,7 +47,7 @@
 <!-- second content item set -->
     <v-container fluid grid-list-md fill-height>
       <v-layout row wrap>
-        <v-flex xs12 sm4>
+        <v-flex xs12 md4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-life-buoy</v-icon> Migration Rescue</v-title>
           <v-list three-line>
@@ -76,7 +76,7 @@
           </v-list>
           </v-card>
         </v-flex>
-        <v-flex xs12 sm4>
+        <v-flex xs12 md4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-tasks</v-icon> Steps We're Taking</v-title>
           <v-list three-line>
@@ -105,7 +105,7 @@
           </v-list>
           </v-card>
         </v-flex>
-        <v-flex xs12 sm4>
+        <v-flex xs12 md4>
           <v-card flat class="pa-4">
           <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-road</v-icon> Steps You Can Take</v-title>
           <v-list three-line>
@@ -114,9 +114,9 @@
                 <v-icon>fa-github</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Star us on Github</v-list-tile-title>
+                <v-list-tile-title>Grab the code</v-list-tile-title>
                 <v-list-tile-sub-title>
-                  So everyone who needs this can find us!
+                  Join the Community
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
