@@ -1,6 +1,54 @@
 var router = require('express').Router()
 const Article = require('../../models/article').Article;
 
+// API for /api/articles/taglists (articles taglist requests (returns flat list of tagNames by vocabName))
+router.get('/articles/taglists', function (req, res) {
+  const taglist = (req.query.taglist) ? req.query.taglist : 'None'
+  console.log('taglist q', taglist)
+  Article.aggregate([
+    { $unwind: "$tags" },
+    { $match: { 
+      "tags.vocabName": taglist,
+    }},
+    { $group:
+      { _id: "$tags.tagName" } 
+    },
+    { $sort:
+      { '_id': 1 } 
+    }
+  ], function (err, result) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    // send array of values instead of objects with key
+    res.send(result.map(function (pt) { return pt._id}))
+    //console.log(result);
+  })
+})
+       
+// API for /api/articles/taglists (articles by vocabname requests (returns list of articles grouped by vocabName))
+router.get('/articles/vocabname', function (req, res) {
+  const taglist = (req.query.taglist) ? req.query.taglist : 'None'
+  console.log('taglist q', taglist)
+  Article.aggregate([
+    { $unwind: "$tags" },
+    { $match: { 
+      "tags.vocabName": taglist,
+    }},
+    { $group : { _id : "$tags.tagName", article : {$push: "$metaData.itemName" }}},
+    { $sort:
+      { '_id': 1 } 
+    }
+  ], function (err, result) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    res.send(result);
+  })
+})
+
 // API for /api/articles (articles collection requests)
 router.get('/articles', function(req, res) {
   query = Article.find()

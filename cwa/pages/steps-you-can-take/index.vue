@@ -2,18 +2,34 @@
 <!-- start page layout -->
   <v-layout column>
 
-<!-- start grid layout -->
+<!-- start first content item with heading -->
     <v-container fluid grid-list-md fill-height>
       <v-layout row wrap>
-
-<!-- start first content item with heading -->
         <v-flex xs12>
           <v-card>
             <v-card-title class="primary--text headline">Steps you can take</v-card-title>
-            <div>
-              <p class="pa-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis nunc, elementum nec rhoncus in, dignissim eget ligula. Nam eu pellentesque eros. Nam non justo vel eros dictum aliquam eget nec justo. Pellentesque ut rhoncus est. Aenean nec quam ex. Mauris porta est finibus, finibus est eget, elementum massa. Quisque laoreet massa et neque hendrerit accumsan. Vivamus eget leo elit.</p>
-            </div>
           </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container fluid grid-list-md fill-height>
+      <v-layout row wrap>
+  <v-flex xs12>
+  <v-expansion-panel popout>
+    <v-expansion-panel-content
+      v-for="(stepFilter,i) in loadedStepFilters.stepFilters"
+      :key="i"
+    >
+      <h3 class="pl-2 subheading secondary--text" slot="header">{{ stepFilter._id  }}</h3>
+              <div class="mb-4" v-for="(article, j) in stepFilter.article" :key="j">
+                <ArticleTeaser
+                  :article="selectLoadedArticle(article)"
+                >
+                </ArticleTeaser>
+                <v-divider></v-divider>
+              </div>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
         </v-flex>
 <!-- end first content item with heading -->
 
@@ -25,3 +41,31 @@
 <!-- end page layout -->
 </template>
 
+<script>
+import ArticleTeaser from '@/components/articles/teaser'
+export default {
+  components: {
+    ArticleTeaser
+  },
+  computed: {
+    loadedArticles() {
+      const articles = this.$store.state.loadedPageArticlesSteps
+      return {
+        articles
+      }
+    },
+    loadedStepFilters() {
+      const stepFilters = this.$store.state.loadedStepFilters
+      return {
+        stepFilters
+      }
+    }
+  },
+  methods: {
+    selectLoadedArticle(name) {
+      console.log('n',name)
+      return this.loadedArticles.articles.find(a => a.metaData.itemName === name )
+    }
+  }
+}
+</script>

@@ -8,7 +8,9 @@ const createStore = () => {
       loadedCaseStudies: [],
       loadedPageArticlesBooks: [],
       loadedBooks: [],
-      loadedPageArticlesBlog: []
+      loadedPageArticlesBlog: [],
+      loadedPageArticlesSteps: [],
+      loadedStepFilters: []
     },
     mutations: {
       setPageArticlesWhatWhy(state, articles) {
@@ -29,6 +31,12 @@ const createStore = () => {
       setPageArticlesBlog(state, articles) {
         state.loadedPageArticlesBlog = articles
       },
+      setPageArticlesSteps(state, articles) {
+        state.loadedPageArticlesSteps = articles
+      },
+      setStepFilters(state, articles) {
+        state.loadedStepFilters = articles
+      },
     },
     actions: {
       async nuxtServerInit(vuexContext, context) {
@@ -45,6 +53,10 @@ const createStore = () => {
         // sort by published date desc
         const theLoadedPageArticlesBlog = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/blog?sort=-metaData.publishedDate")
         vuexContext.commit("setPageArticlesBlog", theLoadedPageArticlesBlog)
+        const theLoadedPageArticlesSteps = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/steps")
+        vuexContext.commit("setPageArticlesSteps", theLoadedPageArticlesSteps)
+        const theLoadedStepFilters = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/vocabname?taglist=Step Topic")
+        vuexContext.commit("setStepFilters", theLoadedStepFilters)
       },
     }
   })
