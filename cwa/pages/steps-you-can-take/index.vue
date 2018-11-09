@@ -63,7 +63,6 @@ export default {
   },
   methods: {
     selectLoadedArticle(name) {
-      console.log('n',name)
       return this.loadedArticles.articles.find(a => a.metaData.itemName === name )
     }
   }

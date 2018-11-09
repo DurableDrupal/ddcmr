@@ -9,13 +9,13 @@
       <v-layout row wrap>
         <v-flex xs12 sm6>
           <v-card flat>
-            <v-title class="pl-1 secondary--text headline">Moving on from the monolith</v-title>
+            <v-card-title class="pl-1 secondary--text headline">Moving on from the monolith</v-card-title>
             <img style="width:100%;" src="/img/monolith-1200.jpg" />
           </v-card>
         </v-flex>
         <v-flex xs12 sm6>
           <v-card flat>
-            <v-title class="pl-1 secondary--text headline">To decoupled architecture</v-title>
+            <v-card-title class="pl-1 secondary--text headline">To decoupled architecture</v-card-title>
             <img style="width:100%;" src="/img/decoupled-1200.jpg" />
           </v-card>
         </v-flex>
@@ -49,7 +49,7 @@
       <v-layout row wrap>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-life-buoy</v-icon> Migration Rescue</v-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-life-buoy</v-icon> Migration Rescue</v-card-title>
           <v-list three-line>
             <v-list-tile to="/what-why">
               <v-list-tile-action>
@@ -78,7 +78,7 @@
         </v-flex>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-tasks</v-icon> Steps We're Taking</v-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-tasks</v-icon> Steps We're Taking</v-card-title>
           <v-list three-line>
             <v-list-tile to="/case-studies/durable-drupal-website-making-of">
               <v-list-tile-action>
@@ -107,7 +107,7 @@
         </v-flex>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-title class="pl-1 primary--text title"><v-icon color="accent">fa-road</v-icon> Steps You Can Take</v-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-road</v-icon> Steps You Can Take</v-card-title>
           <v-list three-line>
             <v-list-tile href="https://github.com/DurableDrupal/ddcmr">
               <v-list-tile-action>

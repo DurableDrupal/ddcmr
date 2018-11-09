@@ -8,7 +8,7 @@ metaData:
     createdDate: '2018-11-02'
     modifiedDate: '2018-11-02'
 author: 'Victor Kane'
-articleTitle: 
+articleTitle: Process for Analysis and Design on the Front End
 articleSubTitle: null
 articleSummary:
     value: |

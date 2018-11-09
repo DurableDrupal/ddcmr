@@ -8,7 +8,7 @@ metaData:
     createdDate: '2018-11-02'
     modifiedDate: '2018-11-02'
 author: 'Victor Kane'
-articleTitle: 
+articleTitle: Sign up for a free mentoring session
 articleSubTitle: Get started on your own content rescue migration project, using our free resources!
 articleSummary:
     value: |
