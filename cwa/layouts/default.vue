@@ -2,7 +2,7 @@
   <v-app light id="ddcmr-blog-cwa">
 <!-- start left-hand drawer/menu/sidebar -->
     <v-navigation-drawer
-      :clipped="clipped"
+      clipped
       fixed
       v-model="drawer"
       app
@@ -46,7 +46,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer height="auto" class="primary pl-1">
+    <v-footer inset height="auto" class="primary pl-1">
       <v-container>
         <v-layout>
           <v-flex>
@@ -71,7 +71,6 @@
   export default {
     data: () => ({
       drawer: null,
-      clipped: true,
       items: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },

@@ -2,7 +2,7 @@
   <v-app light id="ddcmr-default-cwa">
 <!-- start left-hand drawer/menu/sidebar -->
     <v-navigation-drawer
-      :clipped="clipped"
+      clipped
       fixed
       v-model="drawer"
       app
@@ -71,7 +71,6 @@
   export default {
     data: () => ({
       drawer: null,
-      clipped: true,
       items: [
         { icon: 'fa-home', title: 'Home', to: '/' },
         { icon: 'fa-question', title: 'What? Why?', to: '/what-why' },
