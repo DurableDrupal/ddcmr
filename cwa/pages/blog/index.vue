@@ -9,7 +9,7 @@
             <v-card class="pa-2 mb-1" v-for="(article, index) in loadedArticles.articles" :key=index>
               <v-card-title color="primary">
                 <v-btn block flat color="secondary" :to="/blog/ + article.metaData.itemSlug">
-                  <span style="white-space: normal; text-transform: none;" class="headline text-sm-center">{{ article.metaData.itemName }}</span>
+                  <span style="white-space: normal; text-transform: none;" class="title text-sm-center">{{ article.metaData.itemName }}</span>
                 </v-btn>
               </v-card-title>
               <v-card-text>
