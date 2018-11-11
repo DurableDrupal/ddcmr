@@ -49,7 +49,7 @@
       <v-layout row wrap>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-life-buoy</v-icon> Migration Rescue</v-card-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon class="mr-1" color="accent">fa-life-buoy</v-icon>Migration Rescue</v-card-title>
           <v-list three-line>
             <v-list-tile to="/what-why">
               <v-list-tile-action>
@@ -78,14 +78,14 @@
         </v-flex>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-tasks</v-icon> Steps We're Taking</v-card-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon class="mr-1" color="accent">fa-tasks</v-icon>Case Studies</v-card-title>
           <v-list three-line>
             <v-list-tile to="/case-studies/durable-drupal-website-making-of">
               <v-list-tile-action>
                 <v-icon>fa-file-text</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Full-stack Case Study</v-list-tile-title>
+                <v-list-tile-title>Full-stack Dev</v-list-tile-title>
                 <v-list-tile-sub-title>
                   This website: the making of
                 </v-list-tile-sub-title>
@@ -96,7 +96,7 @@
                 <v-icon>fa-file-text</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Migration Case Study</v-list-tile-title>
+                <v-list-tile-title>Migration</v-list-tile-title>
                 <v-list-tile-sub-title>
                   The AWebFactory.com migration step-by-step
                 </v-list-tile-sub-title>
@@ -107,7 +107,7 @@
         </v-flex>
         <v-flex xs12 md4>
           <v-card flat class="pa-4">
-          <v-card-title class="pl-1 primary--text title"><v-icon color="accent">fa-road</v-icon> Steps You Can Take</v-card-title>
+          <v-card-title class="pl-1 primary--text title"><v-icon class="mr-1" color="accent">fa-road</v-icon> Steps You Can Take</v-card-title>
           <v-list three-line>
             <v-list-tile href="https://github.com/DurableDrupal/ddcmr">
               <v-list-tile-action>
@@ -125,7 +125,7 @@
                 <v-icon>fa-exchange</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Migrate your content!</v-list-tile-title>
+                <v-list-tile-title>Migrate content!</v-list-tile-title>
                 <v-list-tile-sub-title>
                   Use our code and guides. Use our mentoring.
                 </v-list-tile-sub-title>
