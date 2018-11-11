@@ -35,6 +35,7 @@ import ArticleFull from '@/components/articles/full'
 import AuthorFull from '@/components/authors/full'
 
 export default {
+  layout: 'blog',
   components: {
     ArticleFull,
     AuthorFull
