@@ -13,40 +13,62 @@
           </v-card>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-card>
-            <v-card-text class="pb-0">
-              <div>
-              <p class="subheading">
-                Grab the code on GitHub (please star us and help us grow the community!)
-              </p>
-              </div>
-            </v-card-text> 
-          </v-card>
+          <v-list three-line>
+            <v-subheader>
+              <v-icon class="mr-2">fa-github</v-icon>
+              <span class="title">Migrate your own content</span>
+            </v-subheader>
+            <v-list-tile href="https://github.com/DurableDrupal/ddcmr">
+              <v-list-tile-action>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Clone the code</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Follow our <nuxt-link to="/case-studies">Case Studies</nuxt-link> and build your project step by step.
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-card>
-            <v-card-text class="pb-0">
-              <div>
-              <p class="subheading">
-                Read the books, check out the case studies, follow the guides below
-              </p>
-              </div>
-            </v-card-text> 
-          </v-card>
+          <v-list three-line>
+            <v-subheader>
+              <v-icon class="mr-2">fa-book</v-icon>
+              <span class="title">Master decoupled architecture</span>
+            </v-subheader>
+            <v-list-tile to="/books">
+              <v-list-tile-action>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Read the books</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Follow the guides below, step-by-step
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-card>
-            <v-card-text class="pb-0">
-              <div>
-              <p class="subheading">
-                Use our mentoring services and finish your high priority projects fast!
-              </p>
-              </div>
-            </v-card-text> 
-          </v-card>
+          <v-list three-line>
+            <v-subheader>
+              <v-icon class="mr-2">fa-users</v-icon>
+              <span class="title">Use our mentoring services</span>
+            </v-subheader>
+            <v-list-tile to="/books">
+              <v-list-tile-action>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Get Just In Time Help</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Finish your high priority projects fast!
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
         </v-flex>
-<!-- end first content item with heading -->
+<!-- end first content section with heading -->
 
+<!-- start second content item with heading -->
         <v-flex xs12>
           <v-card>
             <v-card-title class="primary--text headline">Guides you can follow step-by-step</v-card-title>
@@ -72,6 +94,7 @@
     </v-expansion-panel-content>
 </v-expansion-panel>
         </v-flex>
+<!-- end second content section with heading -->
 
       </v-layout>
     </v-container>
