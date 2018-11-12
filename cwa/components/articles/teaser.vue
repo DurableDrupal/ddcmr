@@ -12,7 +12,8 @@
           <v-spacer></v-spacer>
           <v-btn
             :to="$route.path + '/' + article.metaData.itemSlug"
-            class="primary white--text"
+            flat
+            color="primary"
           >
           See More
           </v-btn>
