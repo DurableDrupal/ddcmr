@@ -1,0 +1,18 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "ddcmr utils",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "inquirer": "^6.2.0",
+    "shelljs": "^0.8.3",
+    "strftime": "^0.10.0"
+  }
+}
