@@ -10,13 +10,13 @@ var questions = [
   {
     type: 'rawlist',
     name: 'op',
-    message: 'Would you like to backup or restore the scs db?',
-    choices: ['backup', 'restore']
+    message: 'Would you like to backup, restore or zap the scs db?',
+    choices: ['backup', 'restore', 'zap']
   },
   {
     type: 'input',
     name: 'bname',
-    message: 'Timestamp as name for backup?',
+    message: 'Timestamp as name for backup/restore?',
     default: thetimestamp
   }
 ]
@@ -36,8 +36,20 @@ inquirer.prompt(questions).then(answers => {
       }
       break
     case 'restore':
-      console.log('\nYou said: restore' + "\n" );
-      shell.exec('ls .')
+      var thecmd = 'mongorestore --drop --db ' + process.env.DB_DB + ' -u ' + process.env.DB_USER + ' -p ' + process.env.DB_PASSWORD + ' --authenticationDatabase admin ' + process.env.BACKUP_DIR + '/' + answers.bname + '/' + process.env.DB_DB 
+      // console.log('thecmd', thecmd + "\n")
+      if (shell.exec(thecmd).code !== 0) {
+        shell.echo('Error: Restore failed');
+        shell.exit(1);
+      }
+      break
+    case 'zap':
+      var thecmd = 'mongo ' + process.env.DB_DB + ' -u ' + process.env.DB_USER + ' -p ' + process.env.DB_PASSWORD + ' --authenticationDatabase admin --eval "db.dropDatabase();"'
+      // console.log('thecmd', thecmd + "\n")
+      if (shell.exec(thecmd).code !== 0) {
+        shell.echo('Error: Zap failed');
+        shell.exit(1);
+      }
       break
     default:
       console.log('\nYou said: nothing' + "\n" );
