@@ -55,7 +55,7 @@ inquirer.prompt(questions).then(answers => {
       }
       break
     case 'cancel':
-      console.log('\n Thanks for dropping by anywy: cancelled' + "\n" );
+      console.log('\n Thanks for dropping by anyway: canceled as per your request' + "\n" );
       process.exit(0)
     default:
       console.log('\nYou said: nothing' + "\n" );
