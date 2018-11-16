@@ -8,16 +8,19 @@ var thetimestamp = strftime('%Y%m%d%H%M%S', new Date())
 
 var questions = [
   {
-    type: 'rawlist',
+    type: 'list',
     name: 'op',
     message: 'Would you like to backup, restore or zap the scs db?',
-    choices: ['backup', 'restore', 'zap']
+    choices: ['backup', 'restore', 'zap', 'cancel']
   },
   {
     type: 'input',
     name: 'bname',
     message: 'Timestamp as name for backup/restore?',
-    default: thetimestamp
+    default: thetimestamp,
+    when: function(answers) {
+      return (answers.op === 'backup' || answers.op === 'restore')
+    }
   }
 ]
 
@@ -51,6 +54,9 @@ inquirer.prompt(questions).then(answers => {
         shell.exit(1);
       }
       break
+    case 'cancel':
+      console.log('\n Thanks for dropping by anywy: cancelled' + "\n" );
+      process.exit(0)
     default:
       console.log('\nYou said: nothing' + "\n" );
       process.exit(0)
