@@ -4,6 +4,7 @@
   "description": "cms for ddcmr site",
   "main": "upsert/upsert.js",
   "scripts": {
+    "start": "NODE_ENV=production node index.js",
     "upsert": "node upsert/upsert",
     "view": "node upsert/echo-content"
   },
@@ -16,8 +17,11 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "gray-matter": "^4.0.1",
+    "inquirer": "^6.2.0",
+    "inquirer-fuzzy-path": "^1.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
+    "shelljs": "^0.8.3",
     "yamljs": "^0.3.0"
   }
 }
