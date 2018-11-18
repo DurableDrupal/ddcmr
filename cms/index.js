@@ -16,7 +16,8 @@ var questions = [
 ]
 
 inquirer.prompt(questions).then(answers => {
-  console.log(JSON.stringify(answers, null, '  '));
+  var thecmd
+  // console.log(JSON.stringify(answers, null, '  '));
   var dirname = path.basename(path.dirname(answers.file))
   var basename = path.basename(answers.file)
   var extname = path.extname(answers.file)
@@ -32,27 +33,53 @@ inquirer.prompt(questions).then(answers => {
       // console.log('directory')
       if (basename === 'content') {
         console.log('upsert all')
+        // shell execute custom written upsert-all.sh (schema model dependency based) with no parameters
+        thecmd = './upsert/upsert-all.sh'
+        if (shell.exec(thecmd).code != 0) {
+          shell.echo('Error: upsert-all failed')
+        }
       } else {
         // console.log(patharray)
         // console.log('length', patharray.length, 'contentindex', contentindex)
+        // if this is a subdir (sub content type) underneath the content type, identify it so we can properly provide it as parameter to upsert script
         if (patharray.length - contentindex > 2) {
           dirname2 = patharray[contentindex + 1]
           console.log('upsert all for content type', dirname2, 'and content sub type', basename)
+          // shell execute upsert-all-items.sh contenttype contentsubtype
+          thecmd = './upsert/upsert-all-items.sh ' + dirname + ' ' + basename
+          if (shell.exec(thecmd).code != 0) {
+            shell.echo('Error: upsert-all-items for content type ' + dirname + ' and content subtype ' + basename + ' failed')
+          }
         } else {
           console.log('upsert all', basename)
+          // shell execute upsert-all-items.sh contenttype
+          thecmd = './upsert/upsert-all-items.sh ' + basename
+          if (shell.exec(thecmd).code != 0) {
+            shell.echo('Error: upsert-all-items for content type ' + basename + ' failed')
+          }
         }
       }
     }
     if (stats.isFile()) {
       // console.log(patharray)
       // console.log('length', patharray.length, 'contentindex', contentindex)
-      // if this is a file in a subdir (sub content type) underneath the content type identify it so we can provide it as parameter to upsert script
+      // if this is a file in a subdir (sub content type) underneath the content type, identify it so we can properly provide it as parameter to upsert script
       if (patharray.length - contentindex > 3) {
         dirname2 = patharray[contentindex + 1]
         console.log('upsert content item', basename, 'for content type', dirname2, 'and content sub type', dirname)
+        // shell execute upsert-single-item.sh contenttype contentitem contentsubtype
+        thecmd = './upsert/upsert-single-item.sh ' + dirname2 + ' ' + basename + ' ' + dirname
+        if (shell.exec(thecmd).code != 0) {
+          shell.echo('Error: upsert-single-item for content type ' + dirname2 + ' and content subtype ' + dirname + ' and content item ' + basename + ' failed')
+        }
       } else {
         // console.log('file')
         console.log('upsert content item', basename, 'for content type', dirname)
+        // shell execute upsert-single-item.sh contenttype "" contentitem
+        thecmd = './upsert/upsert-single-item.sh ' + dirname + ' ' + " "  + ' ' + basename
+        if (shell.exec(thecmd).code != 0) {
+          shell.echo('Error: upsert-single-item for content type ' + dirname + ' and content item ' + basename + ' failed')
+        }
       }
     }
     // console.log('stats', stats)
