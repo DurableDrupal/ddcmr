@@ -3,6 +3,7 @@ var inquirer = require('inquirer')
 var shell = require('shelljs')
 var fs = require('fs')
 var path = require('path')
+require('dotenv').config()
 
 inquirer.registerPrompt('fuzzypath', require('inquirer-fuzzy-path'))
 
@@ -10,7 +11,7 @@ var questions = [
   {
     type: 'fuzzypath',
     name: 'file',
-    rootPath: '/home/durabledrupal/ddcmr/dev/cms/content',
+    rootPath: process.env.ROOT_PATH_CONTENT,
     message: 'Choose single file, entire content type (folder) or all content (parent content folder) to upsert'
   }
 ]
