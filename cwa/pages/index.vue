@@ -146,9 +146,6 @@
 
 <script>
   export default {
-    data: () => ({
-      theAssetHost: process.env.ASSET_HOST
-    })
   }
 </script>
 

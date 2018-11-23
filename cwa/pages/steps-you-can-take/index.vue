@@ -9,7 +9,51 @@
 <!-- start first content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary--text headline">Steps you can take</v-card-title>
+            <v-card-title class="primary--text headline">Guides and Case Studies you can follow step-by-step right now</v-card-title>
+          </v-card>
+        </v-flex>
+        <v-flex xs12 sm4>
+          <v-list three-line>
+            <v-subheader>
+              <span class="title secondary--text">{{ csawf.metaData.itemName }}</span>
+            </v-subheader>
+            <v-list-tile :to="/case-studies/ + csawf.metaData.itemSlug">
+              <v-list-tile-content>
+                  <div>{{ csawf.caseStudySummary.value.substr(0,80) + '...' }}</div>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-flex>
+        <v-flex xs12 sm4>
+          <v-list three-line>
+            <v-subheader>
+              <span class="title secondary--text">{{ csdd.metaData.itemName }}</span>
+            </v-subheader>
+            <v-list-tile :to="/case-studies/ + csdd.metaData.itemSlug">
+              <v-list-tile-content>
+                <div>{{ csdd.caseStudySummary.value.substr(0,80) + '...' }}</div>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-flex>
+        <v-flex xs12 sm4>
+          <v-list three-line>
+            <v-subheader>
+              <span class="title secondary--text">{{ csling.metaData.itemName }}</span>
+            </v-subheader>
+            <v-list-tile :to="/case-studies/ + csling.metaData.itemSlug">
+              <v-list-tile-content>
+                <div>{{ csling.caseStudySummary.value.substr(0,80) + '...' }}</div>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-flex>
+<!-- end first content section with heading -->
+
+<!-- start second content item with heading -->
+        <v-flex xs12>
+          <v-card>
+            <v-card-title class="primary--text headline">Steps we will be taking together</v-card-title>
           </v-card>
         </v-flex>
         <v-flex xs12 sm4>
@@ -58,7 +102,7 @@
               <v-list-tile-action>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Get Just In Time Help</v-list-tile-title>
+                <v-list-tile-title>Get just-in-time help</v-list-tile-title>
                 <v-list-tile-sub-title>
                   Finish your high priority projects fast!
                 </v-list-tile-sub-title>
@@ -66,18 +110,17 @@
             </v-list-tile>
           </v-list>
         </v-flex>
-<!-- end first content section with heading -->
 
-<!-- start second content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary--text headline">Guides you can follow step-by-step</v-card-title>
+            <v-card-title class="primary--text headline">Complete index of categories and topics</v-card-title>
             <v-card-text>
-              <p>Handy alphabetical index to categories (click to open) makes it easy to find individual guides that forming part of the Case Studies.</p>
+              <p>Below you can find a handy alphabetical index of Categories (click to open) grouping together articles and videos followed step-by-step in the Guides, Case Studies and Books.</p>
             </v-card-text>
           </v-card>
         </v-flex>
         <v-flex xs12>
+
  <v-expansion-panel popout>
     <v-expansion-panel-content
       v-for="(stepFilter,i) in loadedStepFilters.stepFilters"
@@ -127,6 +170,16 @@ export default {
   methods: {
     selectLoadedArticle(name) {
       return this.loadedArticles.articles.find(a => a.metaData.itemName === name )
+    }
+  },
+  async asyncData(context) {
+    const csawf = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/awebfactory-dot-com')
+    const csdd = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/durable-drupal-website-making-of')
+    const csling = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/linguathon-dot-com')
+    return {
+      csawf,
+      csdd,
+      csling
     }
   }
 }
