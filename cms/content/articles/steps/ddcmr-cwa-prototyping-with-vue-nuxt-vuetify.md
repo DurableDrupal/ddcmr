@@ -1,15 +1,15 @@
 metaData:
-    itemSlug: cwa-section-page-and-component-rendering-using-vuetify
-    itemName: Front End Section, Page and Component Rendering Using Vuetify
+    itemSlug: ddcmr-cwa-prototyping-with-vue-nuxt-vuetify
+    itemName: DDCMR Front End (CWA) Prototyping with Vue.js, Nuxt.js and Vuetify.js
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-02'
+    published: false
+    publishedDate: null
     createdDate: '2018-11-02'
     modifiedDate: '2018-11-02'
 author: 'Victor Kane'
-articleTitle: Front End Section, Page and Component Rendering Using Vuetify
-articleSubTitle: An excellent material design component framework
+articleTitle: DDCMR Front End (CWA) Prototyping with Vue.js, Nuxt.js and Vuetify.js
+articleSubTitle: An excellent material design component framework. From section and page to component. Follow along from prototype to completed MVP.
 articleSummary:
     value: |
         About Front End Section, Page and Component Rendering Using [Vuetify](https://vuetifyjs.com/en/)
@@ -55,3 +55,7 @@ tags:
       vocabName: Step Topic
       tagSlug: vuetify
       tagName: Vuetify
+    - vocabSlug: step-topic
+      vocabName: Step Topic
+      tagSlug: prototype
+      tagName: Prototype

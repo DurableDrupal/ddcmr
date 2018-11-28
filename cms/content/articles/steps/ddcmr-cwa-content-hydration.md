@@ -1,21 +1,21 @@
 metaData:
-    itemSlug: cwa-test-content-item-detail-page-hydration
-    itemName: Testing Content Item Detail Page Hydration
+    itemSlug: ddcmr-cwa-content-hydration
+    itemName: Front End Content Hydration
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-02'
-    createdDate: '2018-11-02'
-    modifiedDate: '2018-11-02'
+    published: false
+    publishedDate: null
+    createdDate: '2018-11-26'
+    modifiedDate: '2018-11-27'
 author: 'Victor Kane'
-articleTitle: Testing Content Item Detail Page Hydration
-articleSubTitle: With *curl* on the command line
+articleTitle: Front End Content Hydration
+articleSubTitle: During server-side rendering to the vuex store
 articleSummary:
     value: |
-        About Testing Content Item Detail Page Hydration
+        Covering the various levels of front end content hydration: during server-side consuming of REST APIs to the Vuex Store, during top level section page content querying, and during content it full detail page hydration. Iterative and incremental implementation and testing using Vue.js devtools right in the browser. 
 articleBody:
     value: |
-        Detailed Testing Content Item Detail Page Hydration
+        Detailed 
 tags:
     - tagSlug: steps
       tagName: Steps
@@ -53,5 +53,10 @@ tags:
       tagName: Nuxt
     - vocabSlug: step-topic
       vocabName: Step Topic
+      tagSlug: ssr
+      tagName: SSR
+    - vocabSlug: step-topic
+      vocabName: Step Topic
       tagSlug: application state
       tagName: Application State
+

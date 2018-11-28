@@ -1,21 +1,21 @@
 metaData:
-    itemSlug: scs-content-model-testing
-    itemName: Server-side Content Model Testing
+    itemSlug: ddcmr-scs-api-passport-and-jwt-auth
+    itemName: DDCMR Server-side (SCS) API Passport and JWT Auth
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-05'
-    createdDate: '2018-11-05'
-    modifiedDate: '2018-11-05'
+    published: false
+    publishedDate: null
+    createdDate: '2018-11-26'
+    modifiedDate: '2018-11-26'
 author: 'Victor Kane'
-articleTitle: Server-side Content Model Testing
-articleSubTitle: Testing the Content Model REST API and full coverage of the Document Schema
+articleTitle: DDCMR Server-side (SCS) API Passport and JWT Auth
+articleSubTitle: Server-side API Passport and JWT Auth
 articleSummary:
     value: |
-        About Server-side Content Model Testing
+        About Server-side API Passport and JWT Auth
 articleBody:
     value: |
-        Detailed view of Server-side Content Model Testing
+        Detailed view of Server-side API Passport and JWT Auth
 tags:
     - tagSlug: steps
       tagName: Steps
@@ -71,3 +71,11 @@ tags:
       vocabName: Step Topic
       tagSlug: testing
       tagName: Testing
+    - vocabSlug: step-topic
+      vocabName: Step Topic
+      tagSlug: jwt
+      tagName: JWT
+    - vocabSlug: step-topic
+      vocabName: Step Topic
+      tagSlug: authentication-and-authorization
+      tagName: Authentication and Authorization

@@ -1,21 +1,21 @@
 metaData:
-    itemSlug: scs-content-model-implementation
-    itemName: Server-side Content Model Implementation
+    itemSlug: ddcmr-scs-rest-api-implementation
+    itemName: DDCMR Server-side (SCS) Content Model REST API Implementation
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-02'
+    published: false
+    publishedDate: null
     createdDate: '2018-11-02'
     modifiedDate: '2018-11-02'
 author: 'Victor Kane'
-articleTitle: Server-side Content Model Implementation
-articleSubTitle: Implementation of the Content Model Schemas using MongoDB and Mongoose
+articleTitle: DDCMR Server-side (SCS) Content Model REST API Implementation
+articleSubTitle: Implementation and Testing of the Content Model REST API
 articleSummary:
     value: |
-        About the Server-side Content Model Implementation
+        About the Server-side Content Model REST API Implementation
 articleBody:
     value: |
-        Detailed view of the Server-side Content Model Implementation
+        Detailed view of the Server-side Content Model REST API Implementation
 tags:
     - tagSlug: steps
       tagName: Steps
@@ -63,3 +63,7 @@ tags:
       vocabName: Step Topic
       tagSlug: document
       tagName: Document
+    - vocabSlug: step-topic
+      vocabName: Step Topic
+      tagSlug: rest-api
+      tagName: REST API

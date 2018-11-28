@@ -3,8 +3,8 @@ metaData:
     itemName: The DurableDrupal website. The making of.
     itemType: caseStudy
     language: en-US
-    published: true
-    publishedDate: 2018-03-04
+    published: false
+    publishedDate: null
     createdDate: 2018-03-04
     modifiedDate: 2018-03-04
 caseStudySummary:

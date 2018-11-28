@@ -1,21 +1,21 @@
 metaData:
-    itemSlug: scs-test-legacy-migration
-    itemName: Test Legacy Content Migration to the Decoupled Structured Content Server (SCS)
+    itemSlug: ddcmr-scs-content-model-implementation
+    itemName: DDCMR Server-side (SCS) Content Model Implementation
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-08'
-    createdDate: '2018-11-08'
-    modifiedDate: '2018-11-08'
+    published: false
+    publishedDate: null
+    createdDate: '2018-11-26'
+    modifiedDate: '2018-11-26'
 author: 'Victor Kane'
-articleTitle: Test Legacy Content Migration to the Decoupled Structured Content Server (SCS)
-articleSubTitle: Test execution of legacy content item SCS upsert scripts with *curl* from the command line
+articleTitle: DDCMR Server-side (SCS) Content Model Implementation
+articleSubTitle: Implementation of the Content Model Schemas using MongoDB and Mongoose on the Structured Content Server
 articleSummary:
     value: |
-        About Testing Legacy Content Migration to the Decoupled Structured Content Server (SCS)
+        About the Server-side Content Model Implementation
 articleBody:
     value: |
-        Detailed view of Testing Legacy Content Migration to the Decoupled Structured Content Server (SCS)
+        Detailed view of the Server-side Content Model Implementation
 tags:
     - tagSlug: steps
       tagName: Steps
@@ -63,15 +63,3 @@ tags:
       vocabName: Step Topic
       tagSlug: document
       tagName: Document
-    - vocabSlug: step-topic
-      vocabName: Step Topic
-      tagSlug: migration
-      tagName: Migration
-    - vocabSlug: step-topic
-      vocabName: Step Topic
-      tagSlug: drush
-      tagName: Drush
-    - vocabSlug: step-topic
-      vocabName: Step Topic
-      tagSlug: testing
-      tagName: Testing

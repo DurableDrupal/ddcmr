@@ -1,14 +1,14 @@
 metaData:
-    itemSlug: cwa-jwt-auth
-    itemName: Front End Authentication and Authorization with JWT
+    itemSlug: ddcmr-cwa-jwt-auth
+    itemName: DDCMR Front End (CWA) Authentication and Authorization with JWT
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-07'
+    published: false
+    publishedDate: null
     createdDate: '2018-11-07'
     modifiedDate: '2018-11-07'
 author: 'Victor Kane'
-articleTitle: Front End Authentication and Authorization with JWT
+articleTitle: DDCMR Front End (CWA) Authentication and Authorization with JWT
 articleSubTitle: Implementing and Testing Front End JWT based token authentication and authorization
 articleSummary:
     value: |
