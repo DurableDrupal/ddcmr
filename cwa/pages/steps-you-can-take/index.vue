@@ -13,40 +13,22 @@
           </v-card>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-list three-line>
-            <v-subheader>
-              <span class="title secondary--text">{{ csdd.metaData.itemName }}</span>
-            </v-subheader>
-            <v-list-tile :to="/case-studies/ + csdd.metaData.itemSlug">
-              <v-list-tile-content>
-                  <div>{{ csdd.caseStudySummary.value.substr(0,80) + '...' }}</div>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
+                <GuideBlock
+                  :guide="csdd"
+                >
+                </GuideBlock>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-list three-line>
-            <v-subheader>
-              <span class="title secondary--text">{{ csawf.metaData.itemName }}</span>
-            </v-subheader>
-            <v-list-tile :to="/case-studies/ + csawf.metaData.itemSlug">
-              <v-list-tile-content>
-                <div>{{ csawf.caseStudySummary.value.substr(0,80) + '...' }}</div>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
+                <GuideBlock
+                  :guide="csawf"
+                >
+                </GuideBlock>
         </v-flex>
         <v-flex xs12 sm4>
-          <v-list three-line>
-            <v-subheader>
-              <span class="title secondary--text">{{ csling.metaData.itemName }}</span>
-            </v-subheader>
-            <v-list-tile :to="/case-studies/ + csling.metaData.itemSlug">
-              <v-list-tile-content>
-                <div>{{ csling.caseStudySummary.value.substr(0,80) + '...' }}</div>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
+                <GuideBlock
+                  :guide="csling"
+                >
+                </GuideBlock>
         </v-flex>
 <!-- end first content section with heading -->
 
@@ -149,9 +131,11 @@
 
 <script>
 import ArticleTeaser from '@/components/articles/teaser'
+import GuideBlock from '@/components/case-studies/guideblock'
 export default {
   components: {
-    ArticleTeaser
+    ArticleTeaser,
+    GuideBlock
   },
   computed: {
     loadedArticles() {
