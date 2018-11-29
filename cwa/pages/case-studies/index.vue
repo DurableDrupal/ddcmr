@@ -14,10 +14,10 @@
           ></ArticleFull>
         </v-flex>
         <v-flex xs12 sm6>
-          <v-card v-if="caseStudies.length > 0">
+          <v-card v-if="loadedCaseStudies.length > 0">
             <v-card-title class="primary--text headline">Case Studies</v-card-title>
             <v-list class="mt-1">
-              <v-list-tile class="mb-1" v-for="(item, index) in caseStudies" :key=index>
+              <v-list-tile class="mb-1" v-for="(item, index) in loadedCaseStudies" :key=index>
                 <nuxt-link :to="/case-studies/ + item.metaData.itemSlug">
                   <p>{{ item.metaData.itemName }}</p>
                 </nuxt-link>
@@ -49,7 +49,7 @@ export default {
         articles
       }
     },
-    caseStudies() {
+    loadedCaseStudies() {
       const caseStudies = this.$store.state.loadedCaseStudies
       return caseStudies 
     },
