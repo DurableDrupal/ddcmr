@@ -12,21 +12,9 @@
             <v-card-title class="primary--text headline">Guides and Case Studies you can follow step-by-step right now</v-card-title>
           </v-card>
         </v-flex>
-        <v-flex xs12 sm4>
+        <v-flex xs12 sm4  v-for="(slug, j) in guides" :key="j">
                 <GuideBlock
-                  :guide="csdd"
-                >
-                </GuideBlock>
-        </v-flex>
-        <v-flex xs12 sm4>
-                <GuideBlock
-                  :guide="csawf"
-                >
-                </GuideBlock>
-        </v-flex>
-        <v-flex xs12 sm4>
-                <GuideBlock
-                  :guide="csling"
+                  :guide="selectLoadedGuide(slug)"
                 >
                 </GuideBlock>
         </v-flex>
@@ -137,7 +125,16 @@ export default {
     ArticleTeaser,
     GuideBlock
   },
+  data: () => ({
+    guides: [ 'durable-drupal-website-making-of', 'awebfactory-dot-com', 'linguathon-dot-com' ]
+  }),
   computed: {
+    loadedCaseStudies() {
+      const caseStudies = this.$store.state.loadedCaseStudies
+      return {
+        caseStudies
+      }
+    },
     loadedArticles() {
       const articles = this.$store.state.loadedPageArticlesSteps
       return {
@@ -150,22 +147,13 @@ export default {
         stepFilters
       }
     },
-    csdd() {
-      const csdd = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'durable-drupal-website-making-of')
-      return csdd
-    },
-    csawf() {
-      const csawf = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'awebfactory-dot-com')
-      return csawf
-    },
-    csling() {
-      const csling = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'linguathon-dot-com')
-      return csling
-    }
   },
   methods: {
     selectLoadedArticle(name) {
       return this.loadedArticles.articles.find(a => a.metaData.itemName === name )
+    },
+    selectLoadedGuide(slug) {
+      return this.loadedCaseStudies.caseStudies.find(a => a.metaData.itemSlug === slug )
     }
   }
 }
