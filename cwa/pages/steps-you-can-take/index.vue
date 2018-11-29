@@ -15,11 +15,11 @@
         <v-flex xs12 sm4>
           <v-list three-line>
             <v-subheader>
-              <span class="title secondary--text">{{ csawf.metaData.itemName }}</span>
+              <span class="title secondary--text">{{ csdd.metaData.itemName }}</span>
             </v-subheader>
-            <v-list-tile :to="/case-studies/ + csawf.metaData.itemSlug">
+            <v-list-tile :to="/case-studies/ + csdd.metaData.itemSlug">
               <v-list-tile-content>
-                  <div>{{ csawf.caseStudySummary.value.substr(0,80) + '...' }}</div>
+                  <div>{{ csdd.caseStudySummary.value.substr(0,80) + '...' }}</div>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -27,11 +27,11 @@
         <v-flex xs12 sm4>
           <v-list three-line>
             <v-subheader>
-              <span class="title secondary--text">{{ csdd.metaData.itemName }}</span>
+              <span class="title secondary--text">{{ csawf.metaData.itemName }}</span>
             </v-subheader>
-            <v-list-tile :to="/case-studies/ + csdd.metaData.itemSlug">
+            <v-list-tile :to="/case-studies/ + csawf.metaData.itemSlug">
               <v-list-tile-content>
-                <div>{{ csdd.caseStudySummary.value.substr(0,80) + '...' }}</div>
+                <div>{{ csawf.caseStudySummary.value.substr(0,80) + '...' }}</div>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -165,21 +165,23 @@ export default {
       return {
         stepFilters
       }
+    },
+    csdd() {
+      const csdd = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'durable-drupal-website-making-of')
+      return csdd
+    },
+    csawf() {
+      const csawf = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'awebfactory-dot-com')
+      return csawf
+    },
+    csling() {
+      const csling = this.$store.state.loadedCaseStudies.find(a => a.metaData.itemSlug === 'linguathon-dot-com')
+      return csling
     }
   },
   methods: {
     selectLoadedArticle(name) {
       return this.loadedArticles.articles.find(a => a.metaData.itemName === name )
-    }
-  },
-  async asyncData(context) {
-    const csawf = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/awebfactory-dot-com')
-    const csdd = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/durable-drupal-website-making-of')
-    const csling = await context.app.$axios.$get(context.env.API_HOST + '/api/case-studies/slug/linguathon-dot-com')
-    return {
-      csawf,
-      csdd,
-      csling
     }
   }
 }
