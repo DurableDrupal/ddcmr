@@ -3,18 +3,18 @@ metaData:
     itemName: Article Name
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-09-08T00:00:00.000Z'
-    createdDate: '2018-09-08T18:40:54.816Z'
-    modifiedDate: '2018-09-08T00:00:00.000Z'
-    disabled: false
+    published: false
+    publishedDate: null
+    createdDate: 2018-09-08
+    modifiedDate: 2018-09-08
+    disabled: true
     revisionId: 0
     metaTags: null
-    workFlowState:
-        tagSlug: published
-        tagName: Published
+    workflowState:
         vocabSlug: workflow
         vocabName: Workflow
+        tagSlug: draft
+        tagName: Draft
 author: 'Victor Kane'
 articlePreTitle: Article Pre-Title
 articleTitle: Article Title

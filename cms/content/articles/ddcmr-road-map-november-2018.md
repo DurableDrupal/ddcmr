@@ -3,6 +3,7 @@ metaData:
     itemName: DurableDrupal Content Migration Rescue website roadmap for November, 2018
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-10-30'
     createdDate: '2018-10-30'

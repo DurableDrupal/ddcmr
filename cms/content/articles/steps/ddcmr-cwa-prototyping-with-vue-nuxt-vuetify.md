@@ -3,6 +3,7 @@ metaData:
     itemName: DDCMR Front End (CWA) Prototyping with Vue.js, Nuxt.js and Vuetify.js
     itemType: article
     language: en-US
+    disabled: false
     published: false
     publishedDate: null
     createdDate: '2018-11-02'

@@ -3,6 +3,7 @@ metaData:
     itemName: DurableDrupal Content Migration Rescue website: the making of
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-11-30'
     createdDate: '2018-11-30'

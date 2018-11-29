@@ -3,8 +3,9 @@ metaData:
     itemName: AWebFactory.com
     itemType: caseStudy
     language: en-US
-    published: true
-    publishedDate: 2018-03-04T00:00:00
+    disabled: false
+    published: false
+    publishedDate: null
     createdDate: 2018-03-04T00:00:00
     modifiedDate: 2018-03-04T00:00:00
 articles:

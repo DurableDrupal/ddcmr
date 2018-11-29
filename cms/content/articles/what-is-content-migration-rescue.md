@@ -3,6 +3,7 @@ metaData:
     itemName: What Is Content Migration Rescue
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-09-04T00:00:00.000Z'
     createdDate: '2018-09-03T18:40:54.816Z'

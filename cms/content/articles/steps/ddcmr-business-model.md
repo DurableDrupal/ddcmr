@@ -3,10 +3,11 @@ metaData:
     itemName: DDCMR Business Model
     itemType: article
     language: en-US
-    published: false
-    publishedDate: null
-    createdDate: '2018-11-26'
-    modifiedDate: '2018-11-26'
+    disabled: false
+    published: true
+    publishedDate: 2018-11-28
+    createdDate: 2018-11-26
+    modifiedDate: 2018-11-26
 author: 'Victor Kane'
 articleTitle: DDCMR Business Model
 articleSubTitle: The DDCMR Business Model Canvas and whose needs does the solution meet?

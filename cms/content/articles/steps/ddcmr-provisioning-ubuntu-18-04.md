@@ -3,6 +3,7 @@ metaData:
     itemName: DDCMR Provisioning Ubuntu 18.04
     itemType: article
     language: en-US
+    disabled: false
     published: false
     publishedDate: null
     createdDate: '2018-11-26'

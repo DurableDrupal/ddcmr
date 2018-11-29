@@ -3,10 +3,11 @@ metaData:
     itemName: Case Study for NoraPerusin.com
     itemType: caseStudy
     language: en-US
-    published: true
-    publishedDate: 2018-03-04T00:00:00
-    createdDate: 2018-03-04T00:00:00
-    modifiedDate: 2018-03-04T00:00:00
+    disabled: true
+    published: false
+    publishedDate: null
+    createdDate: 2018-03-04
+    modifiedDate: 2018-03-04
 articles:
     - weight: 1
       article: what-is-content-migration-rescue

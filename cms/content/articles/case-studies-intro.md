@@ -3,6 +3,7 @@ metaData:
     itemName: Case Studies Intro
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-09-11'
     createdDate: '2018-09-11'

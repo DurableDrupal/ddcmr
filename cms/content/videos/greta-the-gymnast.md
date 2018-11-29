@@ -3,10 +3,11 @@ metaData:
     itemName: Greta the Gymnast
     itemType: video
     language: en-US
-    published: true
-    publishedDate: '2015-08-28T00:00:00.000Z'
-    createdDate: '2015-08-28T18:40:54.816Z'
-    modifiedDate: '2015-08-28T00:00:00.000Z'
+    disabled: true
+    published: false
+    publishedDate: null
+    createdDate: 2015-08-28
+    modifiedDate: 2015-08-28
 articleTitle: The Content Migration Rescue Process
 articleSubTitle: null
 author: Victor Kane

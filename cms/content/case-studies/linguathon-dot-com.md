@@ -3,8 +3,9 @@ metaData:
     itemName: The Linguathon.com website.
     itemType: caseStudy
     language: en-US
-    published: true
-    publishedDate: 2018-09-11
+    disabled: false
+    published: false
+    publishedDate: null
     createdDate: 2018-09-11
     modifiedDate: 2018-09-11
 articles:

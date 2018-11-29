@@ -3,6 +3,7 @@ metaData:
     itemName: DDCMR Decoupled App Development and Content Workflow
     itemType: article
     language: en-US
+    disabled: false
     published: false
     publishedDate: null
     createdDate: '2018-11-26'

@@ -3,6 +3,7 @@ metaData:
     itemName: Durable Drupal Content Migration Rescue
     itemType: book
     language: en-US
+    disabled: false
     published: true
     publishedDate: 2017-10-01T00:00:00
     createdDate: 2017-10-01T00:00:00

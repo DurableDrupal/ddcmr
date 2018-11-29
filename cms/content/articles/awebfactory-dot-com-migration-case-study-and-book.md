@@ -3,6 +3,7 @@ metaData:
     itemName: Awebfactory.com Migration case-study and Book
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-12-01'
     createdDate: '2018-12-01'

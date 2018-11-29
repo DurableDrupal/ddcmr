@@ -3,6 +3,7 @@ metaData:
     itemName: Wrox
     itemType: publisher
     language: en-US
+    disabled: false
     published: true
     publishedDate: 2000-08-01T00:00:00
     createdDate: 2000-07-01T00:00:00

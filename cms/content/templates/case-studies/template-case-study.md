@@ -7,6 +7,12 @@ metaData:
     publishedDate: null
     createdDate: 2018-03-04
     modifiedDate: 2018-03-04
+    disabled: true
+    workflowState:
+        vocabSlug: workflow
+        vocabName: Workflow
+        tagSlug: draft
+        tagName: Draft
 caseStudySummary:
     value: |
         Follow this website's analysis, design, implementation, deployment and content workflow based on a modern and open full-stack JavaScript decoupled API-first architecture.

@@ -3,6 +3,7 @@ metaData:
     itemName: Leveraging Drupal: Getting Your Site Done Right
     itemType: book
     language: en-US
+    disabled: false
     published: true
     publishedDate: 2009-03-04T00:00:00
     createdDate: 2009-03-04T00:00:00

@@ -3,6 +3,7 @@ metaData:
     itemName: Books Intro
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-10-16'
     createdDate: '2018-10-16'

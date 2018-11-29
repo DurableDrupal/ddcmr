@@ -3,6 +3,7 @@ metaData:
     itemName: Content Migration Rescue Pros and Cons
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-09-10T10:00:00.000Z'
     createdDate: '2018-09-10T10:00:00.000Z'

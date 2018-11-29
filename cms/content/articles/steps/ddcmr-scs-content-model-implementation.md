@@ -3,6 +3,7 @@ metaData:
     itemName: DDCMR Server-side (SCS) Content Model Implementation
     itemType: article
     language: en-US
+    disabled: false
     published: false
     publishedDate: null
     createdDate: '2018-11-26'

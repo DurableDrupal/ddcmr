@@ -3,6 +3,7 @@ metaData:
     itemName: DDCMR Front End (CWA) Authentication and Authorization with JWT
     itemType: article
     language: en-US
+    disabled: false
     published: false
     publishedDate: null
     createdDate: '2018-11-07'

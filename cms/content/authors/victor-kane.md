@@ -3,6 +3,7 @@ metaData:
     itemName: Victor Kane
     itemType: author
     language: en-US
+    disabled: false
     published: true
     publishedDate: 8/2/2008
     createdDate: 8/1/2008

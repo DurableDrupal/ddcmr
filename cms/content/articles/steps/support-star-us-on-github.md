@@ -3,6 +3,7 @@ metaData:
     itemName: Star us on Github
     itemType: article
     language: en-US
+    disabled: false
     published: true
     publishedDate: '2018-11-02'
     createdDate: '2018-11-02'

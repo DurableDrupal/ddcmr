@@ -3,10 +3,11 @@ metaData:
     itemName: Migrate Legacy Content to the Decoupled Structured Content Server (SCS)
     itemType: article
     language: en-US
-    published: true
-    publishedDate: '2018-11-08'
-    createdDate: '2018-11-08'
-    modifiedDate: '2018-11-08'
+    disabled: true
+    published: false
+    publishedDate: null
+    createdDate: 2018-11-08
+    modifiedDate: 2018-11-08
 author: 'Victor Kane'
 articleTitle: Migrate Legacy Content to the Decoupled Structured Content Server (SCS)
 articleSubTitle: Write scripts that upsert content items to SCS as API is implemented
