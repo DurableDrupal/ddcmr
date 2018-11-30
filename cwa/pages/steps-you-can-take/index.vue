@@ -85,11 +85,11 @@
           <v-card>
             <v-card-title class="primary--text headline">Complete index of categories and topics</v-card-title>
             <v-card-text>
-              <p>Below you can find a handy alphabetical index of Categories (click to open, greyed out items are in preparation) grouping together articles and videos followed step-by-step in the Guides, Case Studies and Books.</p>
+              <p>Below you can find a handy alphabetical index of Categories (click to open, greyed-out items are in preparation) grouping together articles and videos followed step-by-step in the Guides, Case Studies and Books.</p>
             </v-card-text>
             <div class="d-flex justify-between align-center mb-3">
               <v-btn @click="allSteps">expand all</v-btn>
-              <v-btn @click="noSteps">none</v-btn>
+              <v-btn @click="noSteps">close all</v-btn>
             </div>
           </v-card>
         </v-flex>
@@ -134,7 +134,7 @@ export default {
   },
   data: () => ({
     panel: [],
-    guides: [ 'durable-drupal-website-making-of', 'awebfactory-dot-com', 'linguathon-dot-com' ]
+    guides: [ 'durable-drupal-website-making-of', 'awebfactory-dot-com', 'clone-build-deploy-entire-ddcmr-system' ]
   }),
   computed: {
     loadedCaseStudies() {
