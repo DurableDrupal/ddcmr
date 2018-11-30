@@ -85,13 +85,20 @@
           <v-card>
             <v-card-title class="primary--text headline">Complete index of categories and topics</v-card-title>
             <v-card-text>
-              <p>Below you can find a handy alphabetical index of Categories (click to open) grouping together articles and videos followed step-by-step in the Guides, Case Studies and Books.</p>
+              <p>Below you can find a handy alphabetical index of Categories (click to open, greyed out items are in preparation) grouping together articles and videos followed step-by-step in the Guides, Case Studies and Books.</p>
             </v-card-text>
+            <div class="d-flex justify-between align-center mb-3">
+              <v-btn @click="allSteps">expand all</v-btn>
+              <v-btn @click="noSteps">none</v-btn>
+            </div>
           </v-card>
         </v-flex>
         <v-flex xs12>
 
- <v-expansion-panel popout>
+  <v-expansion-panel 
+     v-model="panel"
+     expand
+   >
     <v-expansion-panel-content
       v-for="(stepFilter,i) in loadedStepFilters.stepFilters"
       :key="i"
@@ -126,6 +133,7 @@ export default {
     GuideBlock
   },
   data: () => ({
+    panel: [],
     guides: [ 'durable-drupal-website-making-of', 'awebfactory-dot-com', 'linguathon-dot-com' ]
   }),
   computed: {
@@ -154,6 +162,19 @@ export default {
     },
     selectLoadedGuide(slug) {
       return this.loadedCaseStudies.caseStudies.find(a => a.metaData.itemSlug === slug )
+    },
+    // Create an array the length of our items
+    // with all values as true
+    allSteps () {
+      this.panel = []
+      for (var i = 0; i < this.loadedStepFilters.stepFilters.length; i++) {
+        this.panel.push(true)
+      }
+    },
+    // Reset the panel
+    noSteps () {
+      console.log('noSteps')
+      this.panel = []
     }
   }
 }
