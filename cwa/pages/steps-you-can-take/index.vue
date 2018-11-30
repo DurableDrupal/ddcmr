@@ -134,7 +134,7 @@ export default {
   },
   data: () => ({
     panel: [],
-    guides: [ 'durable-drupal-website-making-of', 'awebfactory-dot-com', 'clone-build-deploy-entire-ddcmr-system' ]
+    guides: [ 'durable-drupal-website-making-of', 'clone-build-deploy-entire-ddcmr-system', 'awebfactory-dot-com' ]
   }),
   computed: {
     loadedCaseStudies() {
