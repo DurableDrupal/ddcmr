@@ -2,8 +2,10 @@
 // else 'cd upsert; node upsert authors nora-alicia-perusin'
 
 const fs = require('fs')
-const YAML = require('yamljs');
-const rp = require('request-promise');
+// const YAML = require('yamljs')
+const yaml = require('js-yaml')
+const matter=require('gray-matter')
+const rp = require('request-promise')
 require('dotenv').config()
 
 // for more complete console log if necessary, such as the following:
@@ -152,11 +154,47 @@ async function processGenericContent(contentItem) {
 
 const file = './content/' + contentType + '/' + param + '.md'
 
-fs.readFile(file, 'utf8', function (err,content) {
+fs.readFile(file, 'utf8', function (err,fileStr) {
   if (err) {
     return console.log(err)
   }
-  contentItem = YAML.parse(content);
+
+  // legacy yamljs parsing
+  // contentItem = YAML.parse(content);
+
+  // gray-matter version
+  // first convert to front matter if yaml only
+  if (fileStr.substring(0,3) !== '---') {
+    // convert to standard front matter format with no "content",
+      fileStr = ("---\n" + fileStr + "\n---\n")
+  }
+
+  // parse, including sections
+  const matterJson = matter(fileStr, {
+    section: function(section, matterJson) {
+      if (typeof section.data === 'string' && section.data.trim() !== '') {
+        section.data = yaml.safeLoad(section.data);
+      }
+      section.content = section.content.trim() + '\n';
+    }
+  });
+
+//  console.log(JSON.stringify(matterJson, null, 2));
+
+  // iterate over gray-matter sections
+  // and insert them into data as expected by SCS
+  for (let i = 0; i < matterJson.sections.length; i++) {
+    // console.log('section ', matterJson.sections[i].key)
+    // console.log('content', matterJson.sections[i].content)
+    matterJson.data[matterJson.sections[i].key] = {
+      value: matterJson.sections[i].content
+    }
+  }
+
+  const contentItem = matterJson.data
+
+//  console.log(JSON.stringify(contentItem, null, 2));
+
   let result = 0
   if (contentType === 'articles') {
     result = processArticles(contentItem)
