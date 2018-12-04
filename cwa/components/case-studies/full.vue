@@ -9,9 +9,10 @@
         </v-card-text>
         <v-list class="mt-1">
           <v-list-tile class="mb-1" v-for="(article, index) in caseStudy.articles" :key=index>
-            <nuxt-link :to="/case-studies/ + caseStudy.metaData.itemSlug + '/' + article.article.metaData.itemSlug">
+            <nuxt-link v-if="article.article.metaData.published" :to="/case-studies/ + caseStudy.metaData.itemSlug + '/' + article.article.metaData.itemSlug">
               <p>{{ article.article.metaData.itemName }}</p>
             </nuxt-link>
+            <p v-else class="grey--text">{{ article.article.metaData.itemName }}</p>
           </v-list-tile>
         </v-list>
         <v-card-actions v-if="back==true">
