@@ -12,7 +12,7 @@ require('dotenv').config()
 //   console.log(util.inspect(contentItem, { showHidden: false, depth: null}))
 // const util = require('util')
 
-const apiHost  = 'http://' + process.env.API_HOST + ':' + process.env.API_PORT
+const apiHost = process.env.API_HOST
 let contentType = null;
 
 if (process.argv.length > 3) {
