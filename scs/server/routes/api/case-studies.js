@@ -109,6 +109,13 @@ router.get('/case-studies/slug/:slug', function(req, res) {
   query = CaseStudy.findOne({"metaData.itemSlug": req.params.slug})
   // grab articles related to case study ordered by weight
   .populate('articles.article')
+  // gives error {"error":{"message":"Cannot populate with `sort` on path articles.article because it is a subproperty of a document array","name":"MongooseError"}}
+  /*
+  .populate({
+    path: 'articles.article',
+    options: { sort: { "articles.weight": -1 }}
+  })
+  */
   // optionally support field specifications in query strings
   if (req.query.select) {
     query.select(req.query.select)
