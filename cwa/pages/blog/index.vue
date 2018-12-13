@@ -45,7 +45,8 @@
     },
     computed: {
       loadedArticles() {
-        const articles = this.$store.state.loadedPageArticlesBlog
+        const loadedArticles = this.$store.state.loadedPageArticlesBlog
+        const articles = loadedArticles.filter(a => a.metaData.published);
         return {
           articles
         }
