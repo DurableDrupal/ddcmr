@@ -4,8 +4,8 @@ metaData:
     itemType: article
     language: en-US
     disabled: false
-    published: true
-    publishedDate: 2018-11-30
+    published: false
+    publishedDate: null
     createdDate: 2018-11-30
     modifiedDate: 2018-11-30
 articleTitle: DurableDrupal Content Migration Rescue website. The making of.
@@ -19,4 +19,4 @@ articleSummary:
         Understand exactly how this full stack JavaScript site was built, along with way its decoupled architecture works. So you can build your own.
 tags:
     - tagSlug: blog
-      tagName: blog
+      tagName: Blog

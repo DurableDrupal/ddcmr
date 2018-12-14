@@ -1,3 +1,4 @@
+---
 metaData:
     itemSlug: durable-drupal-website-making-of
     itemName: The DurableDrupal website. The making of.
@@ -8,12 +9,6 @@ metaData:
     publishedDate: 2018-11-28
     createdDate: 2018-11-28
     modifiedDate: 2018-11-28
-caseStudySummary:
-    value: |
-        Follow this website's analysis, design, implementation, deployment and content workflow based on a modern and open full-stack JavaScript decoupled API-first architecture.
-caseStudyDescription:
-    value: |
-        This is a complete and detailed case study covering the process followed in engineering this website which you can follow in order to use the same approach in your own projects.
 articles:
     - weight: 1
       article: ddcmr-business-model
@@ -50,4 +45,11 @@ tags:
       tagName: Durable Drupal Content Migration Rescue
     - tagSlug: content-migration-rescue
       tagName: Content Migration Rescue
+---
+---caseStudySummary
+---
+Follow this website's analysis, design, implementation, deployment and content workflow based on an easily approachable and openly accessible full-stack JavaScript decoupled API-first architecture.
 
+---caseStudyDescription
+---
+This is a complete and detailed case study covering the process followed in engineering this website which you can follow in order to use the same step-by-step approach in your own projects.

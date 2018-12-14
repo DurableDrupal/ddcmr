@@ -4,8 +4,8 @@ metaData:
     itemType: article
     language: en-US
     disabled: false
-    published: true
-    publishedDate: '2018-10-30'
+    published: false
+    publishedDate: null
     createdDate: '2018-10-30'
     modifiedDate: '2018-10-30'
 articleTitle: DurableDrupal Content Migration Rescue website roadmap for November, 2018
@@ -19,4 +19,4 @@ articleSummary:
         Sed eu pharetra lectus. Aliquam dictum non ipsum non molestie. Suspendisse hendrerit aliquet dignissim.
 tags:
     - tagSlug: blog
-      tagName: blog
+      tagName: Blog

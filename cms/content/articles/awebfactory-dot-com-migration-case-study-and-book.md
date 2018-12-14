@@ -5,8 +5,8 @@ metaData:
     itemType: article
     language: en-US
     disabled: false
-    published: true
-    publishedDate: '2018-12-01'
+    published: false
+    publishedDate: null
     createdDate: '2018-12-01'
     modifiedDate: '2018-12-01'
 articleTitle: Awebfactory.com Migration case-study and Book

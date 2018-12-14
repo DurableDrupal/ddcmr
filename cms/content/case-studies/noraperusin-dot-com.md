@@ -6,8 +6,8 @@ metaData:
     disabled: true
     published: false
     publishedDate: null
-    createdDate: 2018-03-04
-    modifiedDate: 2018-03-04
+    createdDate: 2018-12-01
+    modifiedDate: 2018-12-01
 articles:
     - weight: 1
       article: what-is-content-migration-rescue
@@ -21,4 +21,3 @@ tags:
       tagName: Durable Drupal Content Migration Rescue
     - tagSlug: content-migration-rescue
       tagName: Content Migration Rescue
-

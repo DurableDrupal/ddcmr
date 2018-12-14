@@ -5,8 +5,8 @@ metaData:
     language: en-US
     published: false
     publishedDate: null
-    createdDate: 2018-11-30
-    modifiedDate: 2018-11-30
+    createdDate: 2018-11-29
+    modifiedDate: 2018-11-29
     disabled: false
     workflowState:
         vocabSlug: workflow
@@ -29,4 +29,3 @@ tags:
       tagName: Durable Drupal Content Migration Rescue
     - tagSlug: content-migration-rescue
       tagName: Content Migration Rescue
-

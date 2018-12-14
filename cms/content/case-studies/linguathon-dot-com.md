@@ -6,8 +6,8 @@ metaData:
     disabled: false
     published: false
     publishedDate: null
-    createdDate: 2018-09-11
-    modifiedDate: 2018-09-11
+    createdDate: 2018-12-11
+    modifiedDate: 2018-12-11
 articles:
     - weight: 1
       article: what-is-content-migration-rescue
@@ -25,4 +25,3 @@ tags:
       tagName: Localization (l10n)
     - tagSlug: i18n-internationalization
       tagName: Internationalization (i18n)
-
