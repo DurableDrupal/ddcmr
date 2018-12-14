@@ -7,9 +7,11 @@
           v-html="$md.render(author.authorAbout.value)"
         >
         </v-card-text>
+<!--
         <v-card-text>
-        <p>avatar to left of name</p>
+          <p>avatar to left of name</p>
         </v-card-text>
+-->
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn

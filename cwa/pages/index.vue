@@ -91,6 +91,7 @@
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
+            <!-- when migration is online
             <v-list-tile to="/case-studies/awebfactory-dot-com">
               <v-list-tile-action>
                 <v-icon>fa-file-text</v-icon>
@@ -99,6 +100,18 @@
                 <v-list-tile-title>Migration</v-list-tile-title>
                 <v-list-tile-sub-title>
                   The AWebFactory.com migration step-by-step
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            -->
+            <v-list-tile to="/case-studies">
+              <v-list-tile-action>
+                <v-icon>fa-file-text</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>See all</v-list-tile-title>
+                <v-list-tile-sub-title>
+                  Follow a case study that best fits your project
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>

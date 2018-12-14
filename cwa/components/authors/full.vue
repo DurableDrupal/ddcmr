@@ -7,11 +7,13 @@
           v-html="$md.render(author.authorAbout.value)"
         >
         </v-card-text>
+<!--
         <v-card-text>
         <p>avatar to left of name</p>
         <p>Paginated list of articles by this author on left</p>
         <p>Category tree on right</p>
         </v-card-text>
+-->
         <v-card-actions v-if="back==true">
           <v-spacer></v-spacer>
           <v-btn flat color="primary" v-on:click="backbutton">Back</v-btn>

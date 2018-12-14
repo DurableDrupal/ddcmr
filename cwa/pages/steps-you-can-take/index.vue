@@ -23,14 +23,14 @@
 <!-- start second content item with heading -->
         <v-flex xs12>
           <v-card>
-            <v-card-title class="primary--text headline">Steps we will be taking together</v-card-title>
+            <v-card-title class="primary--text headline">Steps we can take together</v-card-title>
           </v-card>
         </v-flex>
         <v-flex xs12 sm4>
           <v-list three-line>
             <v-subheader>
               <v-icon class="mr-2">fa-github</v-icon>
-              <span class="title">Migrate your own content</span>
+              <span class="title">Use the GitHub repo as a free blueprint</span>
             </v-subheader>
             <v-list-tile href="https://github.com/DurableDrupal/ddcmr">
               <v-list-tile-action>
@@ -47,16 +47,16 @@
         <v-flex xs12 sm4>
           <v-list three-line>
             <v-subheader>
-              <v-icon class="mr-2">fa-book</v-icon>
-              <span class="title">Master decoupled architecture</span>
+              <v-icon class="mr-2">fa-briefcase</v-icon>
+              <span class="title">Tell us about your project</span>
             </v-subheader>
-            <v-list-tile to="/books">
+            <v-list-tile to="/info/projects">
               <v-list-tile-action>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>Read the books</v-list-tile-title>
+                <v-list-tile-title>What are you working on?</v-list-tile-title>
                 <v-list-tile-sub-title>
-                  Follow the guides below, step-by-step
+                  Will decoupled architecture be a good fit?
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
@@ -68,13 +68,13 @@
               <v-icon class="mr-2">fa-users</v-icon>
               <span class="title">Use our mentoring services</span>
             </v-subheader>
-            <v-list-tile to="/books">
+            <v-list-tile to="/info/mentoring">
               <v-list-tile-action>
               </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>Get just-in-time help</v-list-tile-title>
                 <v-list-tile-sub-title>
-                  Finish your high priority projects fast!
+                  Empower your team and finish your high priority projects fast!
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
