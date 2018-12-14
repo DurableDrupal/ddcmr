@@ -5,6 +5,12 @@
         <v-card-title class="primary--text title">{{ article.articleTitle }}</v-card-title>
         <v-card-title v-if="article.articleSubtitle" class="primary--text subheading">{{ article.articleSubTitle }}</v-card-title>
         <v-card-text
+          class="ml-4 pl-4 pr-4 pb-0"
+          v-if="article.articleSummary.value"
+          v-html="$md.render(article.articleSummary.value)"
+        >
+        </v-card-text>
+        <v-card-text
           v-html="$md.render(article.articleBody.value)"
         >
         </v-card-text>
