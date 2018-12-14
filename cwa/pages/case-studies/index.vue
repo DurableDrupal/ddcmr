@@ -18,9 +18,10 @@
             <v-card-title class="primary--text headline">Case Studies</v-card-title>
             <v-list class="mt-1">
               <v-list-tile class="mb-1" v-for="(item, index) in loadedCaseStudies" :key=index>
-                <nuxt-link :to="/case-studies/ + item.metaData.itemSlug">
+                <nuxt-link v-if="item.metaData.published" :to="/case-studies/ + item.metaData.itemSlug">
                   <p>{{ item.metaData.itemName }}</p>
                 </nuxt-link>
+                <p v-else class="grey--text">{{ item.metaData.itemName }}</p>
               </v-list-tile>
             </v-list>
           </v-card>

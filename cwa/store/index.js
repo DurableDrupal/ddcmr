@@ -44,11 +44,11 @@ const createStore = () => {
         vuexContext.commit("setPageArticlesWhatWhy", theLoadedPageArticlesWhatWhy)
         const theLoadedPageArticlesCaseStudies = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/case-studies")
         vuexContext.commit("setPageArticlesCaseStudies", theLoadedPageArticlesCaseStudies)
-        const theLoadedCaseStudies = await context.app.$axios.$get (context.env.API_HOST + "/api/case-studies?select=-articles")
+        const theLoadedCaseStudies = await context.app.$axios.$get (context.env.API_HOST + "/api/case-studies?select=-articles&sort=metaData.createdDate")
         vuexContext.commit("setCaseStudies", theLoadedCaseStudies)
         const theLoadedPageArticlesBooks = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/books")
         vuexContext.commit("setPageArticlesBooks", theLoadedPageArticlesBooks)
-        const theLoadedBooks = await context.app.$axios.$get (context.env.API_HOST + "/api/books?select=-articles")
+        const theLoadedBooks = await context.app.$axios.$get (context.env.API_HOST + "/api/books?select=-articles&sort=metaData.createdDate")
         vuexContext.commit("setBooks", theLoadedBooks)
         // sort by published date desc
         const theLoadedPageArticlesBlog = await context.app.$axios.$get (context.env.API_HOST + "/api/articles/tag/blog?sort=-metaData.publishedDate")
